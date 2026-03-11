@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KlasperAI | Estudia con precisión</title>
+  <meta name="description"
+    content="Landing premium de KlasperAI para iOS: transcripción, resúmenes, flashcards, quizzes y planificación de estudio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <!-- SVG defs for logo -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="klasperCoreBg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6d28d9"></stop>
+        <stop offset="100%" stop-color="#4c1d95"></stop>
+      </linearGradient>
+      <linearGradient id="klasperCoreGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7c3aed"></stop>
+        <stop offset="100%" stop-color="#5b21b6"></stop>
+      </linearGradient>
+      <symbol id="klasper-icon" viewBox="0 0 160 160">
+        <circle cx="80" cy="80" r="72" fill="url(#klasperCoreGlow)"></circle>
+        <rect x="34" y="38" width="56" height="84" rx="12" fill="none" stroke="#f8fafc" stroke-width="5"
+          stroke-linecap="round" stroke-linejoin="round"></rect>
+        <path d="M45 38c0-8 12-8 12 0v9c0 8-12 8-12 0" fill="none" stroke="#f8fafc" stroke-width="5"
+          stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M62 38c0-8 12-8 12 0v9c0 8-12 8-12 0" fill="none" stroke="#f8fafc" stroke-width="5"
+          stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M79 38c0-8 12-8 12 0v9c0 8-12 8-12 0" fill="none" stroke="#f8fafc" stroke-width="5"
+          stroke-linecap="round" stroke-linejoin="round"></path>
+        <rect x="44" y="66" width="36" height="5.5" rx="2.75" fill="#f8fafc"></rect>
+        <rect x="44" y="79" width="36" height="5.5" rx="2.75" fill="#f8fafc"></rect>
+        <rect x="44" y="92" width="36" height="5.5" rx="2.75" fill="#f8fafc"></rect>
+        <rect x="44" y="105" width="28" height="5.5" rx="2.75" fill="#f8fafc"></rect>
+        <rect x="94" y="44" width="11" height="76" rx="5.5" fill="#f8fafc"></rect>
+        <path d="M105 79 132 45h-14L94 73z" fill="#f8fafc"></path>
+        <path d="M105 81 121 120h14L111 81z" fill="#f8fafc"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Star canvas -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#inicio" aria-label="KlasperAI">
+      <svg class="k-logo" viewBox="0 0 160 160" role="img" aria-label="KlasperAI logo">
+        <use href="#klasper-icon"></use>
+      </svg>
+      <span>KlasperAI</span>
+    </a>
+    <nav id="mainNav">
+      <a href="#producto">Producto</a>
+      <a href="#funciona">Proceso</a>
+      <a href="#datos">Datos</a>
+      <a href="#final">Contacto</a>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menú">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-label">Estudia con inteligencia artificial</p>
+          <h1>
+            <em>KlasperAI</em>
+            Tu estudio inteligente
+            en <em>iPhone</em>
+          </h1>
+          <p class="hero-desc">Convierte clases y documentos en un sistema accionable — resumen, flashcards, quizzes,
+            tareas y calendario. Todo en un flujo único.</p>
+          <div class="hero-actions">
+            <a class="btn-glow" href="#final">Explorar</a>
+          </div>
+        </div>
+        <!-- Glowing portal arch -->
+        <div class="portal-wrap">
+          <div class="portal">
+            <div class="portal-inner">
+              <img src="./dewey.png" alt="Retrato ilustración" class="portal-image">
+            </div>
+            <div class="portal-light"></div>
+          </div>
+          <p class="portal-quote">"El aprendizaje es natural; es un proceso que surge de la curiosidad y la necesidad de
+            entender el mundo."</p>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-row">
+        <div class="stat">
+          <strong>+6%</strong>
+          <span>mejora promedio en desempeño con aprendizaje activo</span>
+        </div>
+        <div class="stat">
+          <strong>-55%</strong>
+          <span>riesgo de reprobar en clases activas vs magistrales</span>
+        </div>
+        <div class="stat">
+          <strong>g = 0.50</strong>
+          <span>impacto medio-alto de práctica de recuperación</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUOTE DIVIDER ===== -->
+    <section class="quote-section">
+      <div class="glow-ellipse" aria-hidden="true"></div>
+      <p class="quote"><em>Estudiar</em> no es repetir.<br>Es <em>comprender.</em></p>
+    </section>
+
+    <!-- ===== PRODUCTO ===== -->
+    <section class="section" id="producto">
+      <div class="wrap">
+        <p class="section-label">Lo que resolvemos</p>
+        <h2 class="section-title">Ataca los problemas que más frenan tu estudio.</h2>
+        <p class="section-desc">KlasperAI es tu asistente de estudio inteligente para iOS. Graba y transcribe
+          automáticamente tus clases, genera resúmenes profundos, flashcards, quizzes y te ayuda a planificar tu estudio
+          con práctica espaciada.</p>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" y1="19" x2="12" y2="23" />
+                <line x1="8" y1="23" x2="16" y2="23" />
+              </svg>
+            </div>
+            <h3>Captura sin esfuerzo</h3>
+            <p>Graba y transcribe automáticamente. La app resume, ordena puntos clave y extrae tareas sin fricción
+              manual.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3>Memoria a largo plazo</h3>
+            <p>Genera flashcards, quizzes y práctica espaciada para reforzar memoria con recuperación activa.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <h3>Progreso medible</h3>
+            <p>Conecta contenido con acciones: tareas, calendario, sesiones diarias, streak y gamificación orientada a
+              constancia.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <h3>Planificación inteligente</h3>
+            <p>Calendario de estudio, sesiones programadas y recordatorios que se adaptan a tu ritmo de aprendizaje.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CÓMO FUNCIONA ===== -->
+    <section class="section" id="funciona">
+      <div class="wrap">
+        <p class="section-label">Proceso</p>
+        <h2 class="section-title">Una experiencia lineal,<br>de entrada a resultado.</h2>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <span class="step-num">01</span>
+            <h3>Captura contenido</h3>
+            <p>Sube audio o documento desde iPhone. KlasperAI prepara el procesamiento sin interrumpir tu rutina.</p>
+          </article>
+          <article class="process-step">
+            <span class="step-num">02</span>
+            <h3>Procesa con IA</h3>
+            <p>Obtén resumen profundo, conceptos, tareas y eventos. Luego transforma todo en material de práctica.</p>
+          </article>
+          <article class="process-step">
+            <span class="step-num">03</span>
+            <h3>Ejecuta y mejora</h3>
+            <p>Repasa diario con Study Today, quizzes y streak para consolidar aprendizaje y medir avance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DATOS ===== -->
+    <section class="section" id="datos">
+      <div class="wrap">
+        <p class="section-label">Evidencia</p>
+        <h2 class="section-title">Resultados respaldados por ciencia.</h2>
+
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <h3>Aprendizaje activo</h3>
+            <p>Meta-análisis en STEM: +6% en exámenes y reducción del 55% en tasas de reprobación.</p>
+            <a href="https://www.pnas.org/doi/10.1073/pnas.1319030111" target="_blank" rel="noopener noreferrer">Freeman
+              et al., PNAS 2014 →</a>
+          </article>
+          <article class="evidence-card">
+            <h3>Práctica de recuperación</h3>
+            <p>Efecto promedio g = 0.50, robusto en niveles y áreas distintas.</p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/27633493/" target="_blank" rel="noopener noreferrer">Adesope et
+              al., 2017 →</a>
+          </article>
+          <article class="evidence-card">
+            <h3>Espaciado</h3>
+            <p>Revisión de 317 experimentos confirma mejora de retención frente a estudio en bloque.</p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/16719566/" target="_blank" rel="noopener noreferrer">Cepeda et al.,
+              2006 →</a>
+          </article>
+        </div>
+
+        <div class="compare-card">
+          <h3>Comparativa rápida</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Escenario</th>
+                <th>Apuntes manuales</th>
+                <th>KlasperAI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>De clase a resumen</td>
+                <td>Horas y formato inconsistente</td>
+                <td>Automático y estructurado</td>
+              </tr>
+              <tr>
+                <td>Preparación de examen</td>
+                <td>Repaso pasivo</td>
+                <td>Flashcards + quizzes + práctica activa</td>
+              </tr>
+              <tr>
+                <td>Seguimiento diario</td>
+                <td>Sin sistema de hábito</td>
+                <td>Study Today + streak + objetivos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <blockquote class="testimonial-card">
+          "Antes acumulaba clases sin convertirlas en estudio útil. Con KlasperAI paso de audio a plan de acción en
+          minutos."
+          <cite>Estudiante de Ingeniería · Beta iOS</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="section section-cta" id="final">
+      <div class="wrap">
+        <div class="glow-ellipse glow-ellipse-sm" aria-hidden="true"></div>
+        <p class="section-label">Únete ahora</p>
+        <h2 class="section-title">Prueba la experiencia<br>completa en iOS.</h2>
+        <div class="cta-buttons">
+          <a class="btn-glow" href="https://testflight.apple.com/" target="_blank" rel="noopener noreferrer">Abrir en
+            TestFlight</a>
+          <a class="btn-outline" href="mailto:hola@klasper.ai?subject=Quiero%20acceso%20a%20KlasperAI%20iOS">Hablar con
+            el equipo</a>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h3>Cómo estudiar con recuperación activa</h3>
+            <p>Una guía práctica para convertir temas densos en sesiones de alto impacto.</p>
+            <a href="#">Leer artículo →</a>
+          </article>
+          <article class="blog-card">
+            <h3>Checklist para preparar exámenes en menos tiempo</h3>
+            <p>Diseña una rutina semanal que priorice comprensión y retención.</p>
+            <a href="#">Leer artículo →</a>
+          </article>
+          <article class="blog-card">
+            <h3>Study Today: metodología diaria de 30 minutos</h3>
+            <p>Como mantener consistencia sin depender de motivación variable.</p>
+            <a href="#">Leer artículo →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="k-logo k-logo-footer" viewBox="0 0 160 160" role="img" aria-label="KlasperAI logo">
+          <use href="#klasper-icon"></use>
+        </svg>
+        <span>KlasperAI</span>
+      </div>
+      <div class="footer-links">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-6.8-8.5L20 4h-2l-5.2 6.3L8 4H4z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> KlasperAI. Tu asistente de estudio inteligente para iOS.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
