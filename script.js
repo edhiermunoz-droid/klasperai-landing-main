@@ -84,7 +84,12 @@ const revealSelectors = [
   ".evidence-card",
   ".compare-card",
   ".testimonial-card",
+  ".testimonial-card-v2",
+  ".pain-card",
+  ".pain-bridge",
   ".cta-buttons",
+  ".trust-indicators",
+  ".lead-magnet",
   ".blog-card",
 ];
 
@@ -129,3 +134,41 @@ if (menuBtn && mainNav) {
     mainNav.classList.toggle("nav-open");
   });
 }
+
+// ---------- URGENCY BAR ----------
+(function initUrgencyBar() {
+  const bar = document.getElementById("urgency-bar");
+  const closeBtn = document.getElementById("urgencyClose");
+  if (!bar) return;
+
+  document.body.classList.add("has-urgency-bar");
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      bar.classList.add("hidden");
+      document.body.classList.remove("has-urgency-bar");
+    });
+  }
+})();
+
+// ---------- STICKY MOBILE CTA ----------
+(function initStickyCta() {
+  const cta = document.getElementById("stickyCta");
+  const hero = document.querySelector(".hero");
+  const finalSection = document.getElementById("final");
+  if (!cta || !hero) return;
+
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY > hero.offsetHeight * 0.55;
+    const finalRect = finalSection ? finalSection.getBoundingClientRect() : null;
+    const pastFinal = finalRect && finalRect.top < window.innerHeight * 0.85;
+
+    if (scrolled && !pastFinal) {
+      cta.classList.add("is-active");
+      cta.setAttribute("aria-hidden", "false");
+    } else {
+      cta.classList.remove("is-active");
+      cta.setAttribute("aria-hidden", "true");
+    }
+  }, { passive: true });
+})();

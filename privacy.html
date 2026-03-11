@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidad | KlasperAI</title>
+  <meta name="description" content="Política de Privacidad de KlasperAI — cómo recopilamos, usamos y protegemos tu información.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <!-- SVG defs for logo -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="klasperCoreBg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6d28d9"></stop>
+        <stop offset="100%" stop-color="#4c1d95"></stop>
+      </linearGradient>
+      <linearGradient id="klasperCoreGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7c3aed"></stop>
+        <stop offset="100%" stop-color="#5b21b6"></stop>
+      </linearGradient>
+      <symbol id="klasper-icon" viewBox="0 0 160 160">
+        <circle cx="80" cy="80" r="72" fill="url(#klasperCoreGlow)"></circle>
+        <rect x="44" y="38" width="14" height="84" rx="7" fill="#f8fafc"></rect>
+        <polygon points="58,58 108,34 115,47 65,72" fill="#f8fafc"></polygon>
+        <polygon points="58,102 65,88 115,113 108,126" fill="#f8fafc"></polygon>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Star canvas -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="./index.html" aria-label="KlasperAI">
+      <img src="./AppStore_1024.png" class="k-logo" alt="KlasperAI logo">
+      <span>KlasperAI</span>
+    </a>
+    <nav id="mainNav">
+      <a href="./index.html">← Inicio</a>
+      <a href="./terms.html">Términos de Uso</a>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menú">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===== HEADER ===== -->
+    <div class="legal-header">
+      <p class="section-label">Legal</p>
+      <h1>Política de Privacidad</h1>
+      <p class="update-date">Última actualización: 11 de marzo de 2026</p>
+    </div>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="legal-content">
+
+      <div class="legal-section">
+        <p>En KlasperAI, nos tomamos muy en serio la privacidad de tus datos. Esta Política de Privacidad describe
+          cómo recopilamos, usamos y protegemos tu información cuando utilizas nuestra aplicación móvil para iOS.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>1. Información que Recopilamos</h2>
+
+        <h3>1.1. Información Proporcionada por el Usuario</h3>
+        <ul>
+          <li><strong>Identidad:</strong> Cuando utilizas "Sign in with Apple", recibimos tu identificador de usuario
+            único, nombre y correo electrónico. Esta información se almacena localmente en tu dispositivo para
+            gestionar tu perfil y suscripciones.</li>
+          <li><strong>Contenido de Audio:</strong> Para la función de transcripción, la aplicación captura audio a
+            través del micrófono. Este audio se transmite de forma segura a través de nuestro proxy a los servidores
+            de procesamiento (Groq) para convertirse en texto. No almacenamos tu audio de forma permanente en
+            nuestros servidores.</li>
+          <li><strong>Contenido Generado:</strong> Los textos de tus clases, resúmenes, flashcards y búsquedas
+            académicas se almacenan localmente en tu dispositivo mediante SwiftData/CoreData.</li>
+        </ul>
+
+        <h3>1.2. Datos de Uso y Diagnóstico</h3>
+        <p>Recopilamos información sobre el uso de la aplicación, como el saldo de tokens consumidos y las
+          funciones utilizadas, para garantizar el correcto funcionamiento del sistema de suscripción.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>2. Uso de la Información</h2>
+        <p>Utilizamos la información recopilada para:</p>
+        <ul>
+          <li>Proporcionar las funciones principales de la aplicación (transcripción, resúmenes, búsqueda).</li>
+          <li>Gestionar tus suscripciones y compras dentro de la aplicación.</li>
+          <li>Sincronizar tu progreso y contenido localmente en tu dispositivo.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>3. Intercambio de Datos con Terceros</h2>
+        <p>No vendemos tus datos a terceros. Para proporcionar nuestras funciones de Inteligencia Artificial,
+          compartimos datos específicos con:</p>
+        <ul>
+          <li><strong>Groq, Inc.:</strong> Enviamos clips de audio para transcripción y texto para generación de
+            contenido.</li>
+          <li><strong>Perplexity AI:</strong> Enviamos tus consultas de búsqueda para la función de Búsqueda
+            Académica.</li>
+        </ul>
+        <div class="legal-note">
+          <p>Estas transferencias se realizan de forma anónima siempre que es posible y únicamente con el
+            propósito de procesar la solicitud del usuario.</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <h2>4. Retención de Datos</h2>
+        <p>Tus datos personales e historial de clases se almacenan principalmente en tu dispositivo. Si eliminas
+          la aplicación, estos datos se eliminarán del dispositivo a menos que utilices funciones de copia de
+          seguridad externas gestionadas por ti.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>5. Permisos del Sistema</h2>
+        <p>La app solicita acceso a:</p>
+        <ul>
+          <li><strong>Micrófono:</strong> Obligatorio para grabar clases y reuniones.</li>
+          <li><strong>Calendario:</strong> Opcional, para añadir recordatorios o eventos detectados por la IA.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>6. Tus Derechos (GDPR / CCPA)</h2>
+        <p>Tienes derecho a:</p>
+        <ul>
+          <li>Acceder a tus datos almacenados en la app.</li>
+          <li>Solicitar la eliminación de tus datos (puedes hacerlo eliminando tu cuenta o la app).</li>
+          <li>Retirar los permisos de micrófono o calendario en cualquier momento desde los Ajustes de iOS.</li>
+        </ul>
+        <p>Para cualquier consulta sobre privacidad, contáctanos en:
+          <a href="mailto:hola@klasper.ai">hola@klasper.ai</a>
+        </p>
+      </div>
+
+      <div class="legal-section">
+        <h2>7. Cambios a esta Política</h2>
+        <p>Podemos actualizar esta política ocasionalmente. Te notificaremos cualquier cambio importante a través
+          de la aplicación.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="./AppStore_1024.png" class="k-logo k-logo-footer" alt="KlasperAI logo">
+        <span>KlasperAI</span>
+      </div>
+      <div class="footer-links">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-6.8-8.5L20 4h-2l-5.2 6.3L8 4H4z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+          </svg>
+        </a>
+      </div>
+      <div class="footer-legal-links">
+        <a href="./privacy.html">Política de Privacidad</a>
+        <a href="./terms.html">Términos de Uso</a>
+        <a href="mailto:hola@klasper.ai">Contacto</a>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> KlasperAI. Tu asistente de estudio inteligente para iOS.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
