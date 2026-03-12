@@ -4,19 +4,31 @@
 
 /* ---------- DESIGN TOKENS ---------- */
 :root {
-  --bg: #08060e;
-  --bg-subtle: #0e0b16;
-  --surface: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(168, 85, 247, 0.25);
-  --text: #e8e4f0;
-  --text-dim: rgba(255, 255, 255, 0.45);
-  --text-body: rgba(255, 255, 255, 0.6);
-  --accent: #a855f7;
+  /* Core Palette (Synthesized from App Screenshots) */
+  --bg: #0b0d17;
+  --bg-subtle: #05060b;
+  --surface: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(139, 92, 246, 0.3);
+  
+  --text: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.5);
+  --text-body: rgba(255, 255, 255, 0.7);
+  
+  --accent: #8b5cf6;
   --accent-soft: #c084fc;
-  --accent-deep: #7c3aed;
-  --glow: rgba(168, 85, 247, 0.4);
+  --accent-deep: #6366f1;
+  
+  --glow: rgba(139, 92, 246, 0.5);
   --glow-wide: rgba(139, 92, 246, 0.15);
+  
+  /* State Colors (Flashcards / Feedback) */
+  --diff-very-hard: #ef4444;
+  --diff-hard: #f97316;
+  --diff-normal: #6b7280;
+  --diff-easy: #10b981;
+  --diff-very-easy: #06b6d4;
+
   --serif: "Cormorant Garamond", "Georgia", serif;
   --sans: "Inter", system-ui, -apple-system, sans-serif;
 }
@@ -186,19 +198,20 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.hero h1 {
+.hero-text h1 {
   font-family: var(--serif);
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-  color: #fff;
+  font-size: clamp(2.5rem, 8vw, 4.2rem);
+  line-height: 1.1;
+  font-weight: 700;
   margin-bottom: 24px;
+  color: #fff;
 }
 
-.hero h1 em {
+.hero-text h1 em {
   font-style: italic;
+  font-weight: 400;
   color: var(--accent-soft);
+  display: block;
 }
 
 .hero-desc {
@@ -242,11 +255,14 @@ nav a:hover {
       transparent 100%);
   border: 1.5px solid;
   border-image: linear-gradient(180deg, var(--accent) 0%, rgba(168, 85, 247, 0.15) 70%, transparent 100%) 1;
-  box-shadow:
-    0 0 60px rgba(168, 85, 247, 0.15),
-    0 0 120px rgba(139, 92, 246, 0.08),
-    inset 0 0 60px rgba(168, 85, 247, 0.06);
-  animation: portalPulse 4s ease-in-out infinite alternate;
+  /* Optional floating animation for portal */
+  animation: portalPulse 4s ease-in-out infinite alternate, float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Portrait image inside portal */
@@ -340,8 +356,9 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   min-width: 140px;
-  padding: 14px 32px;
-  border-radius: 999px;
+  padding: 0 24px;
+  height: 48px;
+  border-radius: 9px;
   font-family: var(--sans);
   font-size: 0.85rem;
   font-weight: 600;
@@ -358,7 +375,7 @@ nav a:hover {
   content: '';
   position: absolute;
   inset: -1px;
-  border-radius: 999px;
+  border-radius: 9px;
   background: linear-gradient(135deg, var(--accent), var(--accent-deep));
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -367,7 +384,7 @@ nav a:hover {
 
 .btn-glow:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 30px var(--glow), 0 0 60px rgba(168, 85, 247, .15);
+  box-shadow: 0 0 20px var(--glow), 0 0 40px rgba(168, 85, 247, .1);
   transform: translateY(-2px);
 }
 
@@ -379,8 +396,9 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
-  border-radius: 999px;
+  padding: 0 24px;
+  height: 48px;
+  border-radius: 9px;
   font-family: var(--sans);
   font-size: 0.85rem;
   font-weight: 600;
@@ -396,8 +414,43 @@ nav a:hover {
   color: #fff;
   border-color: rgba(255, 255, 255, .2);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.btn-app-store {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-app-store::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.btn-app-store:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.2), 0 0 0 1px rgba(255,255,255,0.1) inset;
+}
+
+.btn-app-store:hover::after {
+  opacity: 1;
+}
+
+.btn-app-store svg {
+  display: block;
+}
 /* ---------- STATS ROW ---------- */
 .stats-row {
   position: relative;
@@ -555,12 +608,20 @@ nav a:hover {
 }
 
 .feature-card:hover {
-  background: rgba(168, 85, 247, 0.04);
+  background: rgba(168, 85, 247, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.15);
+  border-color: var(--border-hover);
 }
 
 .feature-icon {
   color: var(--accent);
   margin-bottom: 18px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
 }
 
 .feature-card h3 {
@@ -641,7 +702,9 @@ nav a:hover {
 
 .evidence-card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 12px 40px -15px rgba(168, 85, 247, 0.2);
 }
 
 .evidence-card h3 {
@@ -728,6 +791,13 @@ tr:last-child td {
   font-style: italic;
   line-height: 1.6;
   color: var(--text-body);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.15);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
 .testimonial-card cite {
@@ -1465,18 +1535,18 @@ tr:last-child td {
   left: 0;
   right: 0;
   z-index: 200;
-  background: linear-gradient(90deg, rgba(109, 40, 217, 0.97) 0%, rgba(91, 33, 182, 0.97) 100%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(168, 85, 247, 0.35);
-  padding: 10px 24px;
+  background: rgba(8, 6, 14, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+  padding: 8px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-size: 0.82rem;
+  gap: 12px;
+  font-size: 0.78rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
+  color: #c084fc;
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -2016,4 +2086,151 @@ body.has-urgency-bar .hero {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ---------- APP SHOWCASE ---------- */
+.app-showcase {
+  background: var(--bg-subtle);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.showcase-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.showcase-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: start;
+}
+
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  opacity: 1; /* Keeping visible for now, can add JS scroll reveal later */
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.iphone-mockup {
+  position: relative;
+  width: 280px;
+  height: 580px;
+  background: #000;
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 
+    0 50px 100px -20px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 20px rgba(168, 85, 247, 0.15);
+  border: 4px solid #1a1a1a;
+}
+
+/* Notch */
+.iphone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 25px;
+  background: #1a1a1a;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  z-index: 2;
+}
+
+.iphone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.iphone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcase-item h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.showcase-item p {
+  color: var(--text-body);
+  text-align: center;
+  font-size: 0.95rem;
+  max-width: 240px;
+}
+
+@media (max-width: 768px) {
+  .iphone-mockup {
+    width: 240px;
+    height: 500px;
+  }
+}
+
+/* ---------- STEP VISUAL ---------- */
+.step-visual {
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.iphone-mockup.mini {
+  width: 100%;
+  height: 180px; /* Fixed height for the "cut" look but wrapped in a mockup */
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 8px 8px 0 8px;
+  border-width: 4px 4px 0 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.iphone-mockup.mini::before {
+  width: 80px;
+  height: 18px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.iphone-mockup.mini .iphone-screen {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.step-visual img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.process-step:hover .iphone-mockup.mini img {
+  transform: translateY(-5px);
 }

@@ -4,15 +4,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KlasperAI — De clase grabada a material de examen en minutos</title>
+  <title>KlasperAI — De clase a material de estudio en minutos</title>
   <meta name="description"
-    content="KlasperAI convierte tus clases en resúmenes, flashcards y quizzes automáticamente. Estudia menos tiempo, aprende más. Solo para iPhone. Beta gratis.">
+    content="KlasperAI convierte tus clases en resúmenes, flashcards, quizzes y juegos de vocabulario automáticamente. Estudia menos tiempo, aprende más. Descárgalo gratis en la App Store.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://klasper.ai/">
+  <meta property="og:title" content="KlasperAI — De clase a material de estudio en minutos">
+  <meta property="og:description" content="KlasperAI convierte tus clases en resúmenes, flashcards, quizzes y juegos de vocabulario automáticamente. Estudia menos tiempo, aprende más. Descárgalo gratis en la App Store.">
+  <meta property="og:image" content="https://klasper.ai/dewey.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://klasper.ai/">
+  <meta property="twitter:title" content="KlasperAI — De clase a material de estudio en minutos">
+  <meta property="twitter:description" content="KlasperAI convierte tus clases en resúmenes, flashcards, quizzes y juegos de vocabulario automáticamente. Estudia menos tiempo, aprende más. Descárgalo gratis en la App Store.">
+  <meta property="twitter:image" content="https://klasper.ai/dewey.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KlasperAI",
+    "operatingSystem": "iOS 17+",
+    "applicationCategory": "EducationApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "KlasperAI convierte tus clases en resúmenes, flashcards, quizzes y juegos de vocabulario automáticamente."
+  }
+  </script>
 </head>
 
 <body>
@@ -31,11 +62,11 @@
   <div id="urgency-bar" role="alert">
     <span class="urgency-icon" aria-hidden="true">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
     </span>
     <span class="urgency-text">
-      Beta activa — acceso gratuito completo, solo por tiempo limitado
+      Oferta de lanzamiento: Prueba gratuita disponible por tiempo limitado.
     </span>
     <button class="urgency-close" id="urgencyClose" aria-label="Cerrar aviso">×</button>
   </div>
@@ -53,7 +84,7 @@
       <a href="#producto">Producto</a>
       <a href="#funciona">Proceso</a>
       <a href="#datos">Evidencia</a>
-      <a class="nav-cta-btn" href="#final">Unirse a la beta</a>
+      <a class="nav-cta-btn btn-glow" href="#final" style="padding: 8px 16px; min-width: auto; font-size: 0.75rem;">Descargar</a>
     </nav>
     <button class="menu-toggle" id="menuBtn" aria-label="Menú">
       <span></span><span></span>
@@ -68,7 +99,7 @@
 
           <div class="hero-badge">
             <span class="hero-badge-dot" aria-hidden="true"></span>
-            <span>Beta activa · iOS 17+ · App Store próximamente</span>
+            <span>Ya disponible en la App Store · iOS 17+</span>
           </div>
 
           <p class="hero-label">El método de estudio que los mejores ya usan</p>
@@ -78,18 +109,18 @@
             Empieza a <em>retener más.</em>
           </h1>
 
-          <p class="hero-desc">KlasperAI convierte cualquier clase o documento en flashcards, quizzes y un plan de
-            repaso — en menos de 60 segundos. Diseñado para estudiantes que no pueden permitirse reprobar.</p>
+          <p class="hero-desc">KlasperAI convierte cualquier clase, reunión o PDF en flashcards, quizzes, juegos de vocabulario y un plan de
+            repaso — en menos de 60 segundos.</p>
 
           <div class="hero-actions">
-            <a class="btn-glow btn-primary-hero" href="#final">
-              Unirse gratis a la beta
+            <a class="btn-glow" href="#final" style="height: 48px; border-radius: 9px; padding: 0 24px; min-width: auto;">
+              Descargar App
             </a>
-            <a class="btn-outline" href="#producto">
+            <a class="btn-outline" href="#producto" style="height: 48px; border-radius: 9px; padding: 0 24px; font-weight: 500;">
               Ver cómo funciona
             </a>
           </div>
-          <p class="hero-trust">Solo iOS · Sin tarjeta · Gratis durante el beta</p>
+          <p class="hero-trust">7 días de prueba gratis. Tu privacidad garantizada.</p>
         </div>
 
         <!-- Glowing portal arch -->
@@ -210,9 +241,8 @@
                 <line x1="8" y1="23" x2="16" y2="23" />
               </svg>
             </div>
-            <h3>Captura sin fricción</h3>
-            <p>Graba la clase o sube el PDF. En menos de 60 segundos tienes resumen estructurado, conceptos clave y
-              tareas detectadas automáticamente.</p>
+            <h3>Clases y Reuniones</h3>
+            <p>Sube el audio de tu clase, reunión o el PDF. En menos de 60 segundos obtienes un resumen estructurado y tareas o conceptos clave detectados.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
@@ -222,9 +252,8 @@
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
               </svg>
             </div>
-            <h3>Retención real, no ilusión</h3>
-            <p>Flashcards y quizzes generados desde tu propio contenido. La práctica de recuperación activa fija el
-              conocimiento donde el releer no llega.</p>
+            <h3>Vocabulario y Flashcards</h3>
+            <p>Juegos interactivos de vocabulario por pares (Vocabulary Match) y Flashcards autogeneradas para que tu conocimiento quede fijado a largo plazo.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
@@ -233,27 +262,63 @@
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
               </svg>
             </div>
-            <h3>Sabes exactamente dónde estás</h3>
-            <p>Streak diario, sesiones completadas y cobertura por tema. Terminas cada sesión sabiendo qué dominaste y
-              qué falta repasar.</p>
+            <h3>Study Today</h3>
+            <p>Tu asistente te indica exactamente qué debes repasar hoy. Mantén tu racha diaria (streak) para no perder el ritmo y evitar la curva del olvido.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                 stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
               </svg>
             </div>
-            <h3>El plan que nunca pudiste construir solo</h3>
-            <p>Calendario de repaso espaciado generado automáticamente. Llegas al examen preparado, no improvisando la
-              noche anterior.</p>
+            <h3>Liga de Estudiantes</h3>
+            <p>Aprender no tiene que ser solitario. Compite en nuestra liga ganando puntos (XP) por cada sesión que completes y lidera el ranking de tu nivel.</p>
           </article>
         </div>
       </div>
     </section>
+    
+    <!-- ===== APP SHOWCASE ===== -->
+    <section class="app-showcase">
+      <div class="showcase-container">
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <div class="iphone-mockup">
+              <div class="iphone-screen">
+                <img src="./app_screen_dashboard.png" alt="KlasperAI Dashboard">
+              </div>
+            </div>
+            <h3>Tu Centro de Mando</h3>
+            <p>Misión diaria, rachas y tus materias en un solo vistazo profesional.</p>
+          </div>
+          
+          <div class="showcase-item">
+            <div class="iphone-mockup">
+              <div class="iphone-screen">
+                <img src="./app_screen_record.png" alt="KlasperAI Recording">
+              </div>
+            </div>
+            <h3>Captura Inteligente</h3>
+            <p>Graba tus clases o importa documentos y deja que la IA haga el trabajo pesado.</p>
+          </div>
+          
+          <div class="showcase-item">
+            <div class="iphone-mockup">
+              <div class="iphone-screen">
+                <img src="./app_screen_answer.png" alt="KlasperAI Flashcards">
+              </div>
+            </div>
+            <h3>Repaso Efectivo</h3>
+            <p>Flashcards que se adaptan a tu nivel de dificultad para una retención máxima.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- ===== CÓMO FUNCIONA ===== -->
     <section class="section" id="funciona">
@@ -264,21 +329,41 @@
         <div class="process-grid">
           <article class="process-step">
             <span class="step-num">01</span>
-            <h3>Subes tu clase o apunte</h3>
-            <p>Audio de tu clase, foto de tus notas o PDF del material. KlasperAI soporta todos los formatos que ya
-              usas. Sin reformatear nada.</p>
+            <div class="step-visual">
+              <div class="iphone-mockup mini">
+                <div class="iphone-screen">
+                  <img src="./app_screen_record.png" alt="Grabación">
+                </div>
+              </div>
+            </div>
+            <h3>Subes tu material</h3>
+            <p>Audio de tu clase, reunión o el PDF. KlasperAI soporta los formatos que ya usas. Sin reformatear nada.</p>
           </article>
+          
           <article class="process-step">
             <span class="step-num">02</span>
-            <h3>KlasperAI te entrega el sistema</h3>
-            <p>En menos de un minuto: resumen estructurado, flashcards, quiz de comprensión, tareas detectadas y
-              eventos para tu calendario.</p>
+            <div class="step-visual">
+              <div class="iphone-mockup mini">
+                <div class="iphone-screen">
+                  <img src="./app_screen_question.png" alt="IA Generando">
+                </div>
+              </div>
+            </div>
+            <h3>Sistema autogenerado</h3>
+            <p>En menos de un minuto: recibe un resumen, flashcards, un quiz interactivo y tus tareas pendientes detectadas.</p>
           </article>
+          
           <article class="process-step">
             <span class="step-num">03</span>
-            <h3>Estudias, el sistema te sigue</h3>
-            <p>Study Today te dice exactamente qué repasar hoy. El streak te mantiene consistente. El quiz te confirma
-              que realmente aprendiste.</p>
+            <div class="step-visual">
+              <div class="iphone-mockup mini">
+                <div class="iphone-screen">
+                  <img src="./app_screen_swipe_easy.png" alt="Repaso Activo">
+                </div>
+              </div>
+            </div>
+            <h3>Crea el hábito</h3>
+            <p>Study Today te marca lo esencial. Gana XP, compite en la liga y sube de rango mientras tu conocimiento se graba a largo plazo.</p>
           </article>
         </div>
       </div>
@@ -381,16 +466,14 @@
     <section class="section section-cta" id="final">
       <div class="wrap">
         <div class="glow-ellipse glow-ellipse-sm" aria-hidden="true"></div>
-        <p class="section-label">Acceso beta gratuito</p>
+        <p class="section-label">Empieza ahora</p>
         <h2 class="section-title">El semestre que viene,<br>¿seguirás estudiando igual?</h2>
-        <p class="cta-desc">La beta es gratis mientras dure. Cuando lancemos en App Store, el plan base costará
-          <strong>$9.99 USD/mes</strong>. Los beta testers mantienen acceso gratuito extendido.</p>
+        <p class="cta-desc">Descarga KlasperAI hoy y comienza tu <strong>prueba gratuita de 7 días</strong>. Descubre cuánto tiempo puedes ahorrar.</p>
 
         <div class="cta-buttons">
-          <a class="btn-glow btn-primary-hero" href="https://testflight.apple.com/" target="_blank"
-            rel="noopener noreferrer">Unirse a la beta — Gratis</a>
-          <a class="btn-outline"
-            href="mailto:hola@klasper.ai?subject=Quiero%20acceso%20a%20KlasperAI%20iOS">Hablar con el equipo</a>
+          <a class="btn-glow" href="#" style="height: 48px; border-radius: 9px; padding: 0 24px; min-width: auto;">
+            Descargar en App Store
+          </a>
         </div>
 
         <div class="trust-indicators">
@@ -432,9 +515,9 @@
               <h3>Guía: Cómo preparar un examen en 48 horas con recuperación activa</h3>
               <p>El método exacto que aplica KlasperAI, explicado paso a paso. Sin app, sin requisitos. Solo el
                 sistema que funciona.</p>
-              <a href="mailto:hola@klasper.ai?subject=Quiero%20la%20guia%20de%2048%20horas"
-                class="btn-outline lead-magnet-btn">
-                Recibir la guía gratis →
+              <a href="guia.html"
+                class="btn-glow lead-magnet-btn">
+                Ver la guía interactiva gratis →
               </a>
             </div>
             <div class="lead-magnet-badge" aria-hidden="true">
@@ -448,17 +531,17 @@
           <article class="blog-card">
             <h3>Cómo estudiar con recuperación activa</h3>
             <p>Una guía práctica para convertir temas densos en sesiones de alto impacto.</p>
-            <a href="mailto:hola@klasper.ai?subject=Guia%20recuperacion%20activa" class="blog-card-cta">Recibir por email →</a>
+            <a href="mailto:support@klasperai.com?subject=Guia%20recuperacion%20activa" class="blog-card-cta">Recibir por email →</a>
           </article>
           <article class="blog-card">
             <h3>Checklist para preparar exámenes en menos tiempo</h3>
             <p>Diseña una rutina semanal que priorice comprensión y retención.</p>
-            <a href="mailto:hola@klasper.ai?subject=Checklist%20examenes" class="blog-card-cta">Recibir por email →</a>
+            <a href="mailto:support@klasperai.com?subject=Checklist%20examenes" class="blog-card-cta">Recibir por email →</a>
           </article>
           <article class="blog-card">
             <h3>Study Today: metodología diaria de 30 minutos</h3>
             <p>Cómo mantener consistencia sin depender de motivación variable.</p>
-            <a href="mailto:hola@klasper.ai?subject=Metodologia%20Study%20Today" class="blog-card-cta">Recibir por email →</a>
+            <a href="mailto:support@klasperai.com?subject=Metodologia%20Study%20Today" class="blog-card-cta">Recibir por email →</a>
           </article>
         </div>
       </div>
@@ -472,7 +555,7 @@
         <span>KlasperAI</span>
       </div>
       <div class="footer-links">
-        <a href="mailto:hola@klasper.ai" aria-label="Contacto por email">
+        <a href="mailto:support@klasperai.com" aria-label="Contacto por email">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
             stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -495,7 +578,7 @@
       <div class="footer-legal-links">
         <a href="./privacy.html">Política de Privacidad</a>
         <a href="./terms.html">Términos de Uso</a>
-        <a href="mailto:hola@klasper.ai">Contacto</a>
+        <a href="mailto:support@klasperai.com">Contacto</a>
       </div>
       <p class="footer-copy">© <span id="year"></span> KlasperAI. Tu asistente de estudio inteligente para iOS.</p>
     </div>
@@ -504,7 +587,7 @@
   <!-- ===== STICKY MOBILE CTA ===== -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="true">
     <a class="btn-glow sticky-cta-btn" href="#final">
-      Unirse a la beta — Gratis
+      Descárgalo gratis
     </a>
   </div>
 

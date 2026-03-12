@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía Gratis: Domina cualquier tema con el Método Klasper + IA</title>
+  <meta name="description"
+    content="Aprende cómo usar la inteligencia artificial y la ciencia del aprendizaje para retener 3 veces más información en la mitad del tiempo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  
+  <style>
+    /* Estilos específicos para la página de la guía */
+    .guide-article {
+      max-width: 800px;
+      margin: 120px auto;
+      padding: 0 24px;
+    }
+    
+    .guide-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    
+    .guide-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 3.8rem);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+    
+    .guide-header .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-body);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .guide-content h2 {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      margin: 60px 0 24px;
+      color: var(--accent-soft);
+    }
+    
+    .guide-content p {
+      font-size: 1.15rem;
+      margin-bottom: 24px;
+      color: var(--text-body);
+      line-height: 1.8;
+    }
+    
+    .guide-visual {
+      margin: 48px 0;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    }
+    
+    .guide-visual img {
+      width: 100%;
+      display: block;
+    }
+    
+    .method-step {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+    
+    .method-step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .method-info {
+      flex: 1;
+    }
+    
+    .method-visual {
+      flex: 0 0 320px;
+    }
+
+    @media (max-width: 768px) {
+      .method-step {
+        flex-direction: column !important;
+        gap: 32px;
+      }
+      .method-visual {
+        flex: 1;
+        width: 100%;
+      }
+    }
+    
+    .highlight-card {
+      background: var(--surface);
+      padding: 32px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    
+    .highlight-card h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Star canvas -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="./AppStore_1024.png" class="k-logo" alt="KlasperAI logo">
+      <span>KlasperAI</span>
+    </a>
+    <a href="index.html" class="btn-outline" style="height: 38px; border-radius: 8px; font-size: 0.75rem;">Volver</a>
+  </header>
+
+  <main class="guide-article">
+    <header class="guide-header">
+      <p class="section-label">Guía Maestra</p>
+      <h1>Cómo Hackear tu Aprendizaje con IA</h1>
+      <p class="subtitle">Descubre el método exacto para retener el 90% de lo que estudias sin quemarte en el proceso.</p>
+    </header>
+
+    <div class="guide-content">
+      <p>La mayoría de los estudiantes fallan no por falta de capacidad, sino por usar herramientas obsoletas. Tu cerebro no es un disco duro; es un procesador dinámico que olvida lo que no considera "vital".</p>
+      
+      <div class="highlight-card">
+        <h3>El Problema: La Curva del Olvido</h3>
+        <p>A las 24 horas de una clase, olvidas hasta el 70% de lo que escuchaste si no lo procesas activamente. Releer tus apuntes solo te da una "ilusión de conocimiento".</p>
+      </div>
+
+      <h2>El Método Klasper en 4 Pasos</h2>
+
+      <section class="method-step">
+        <div class="method-info">
+          <p class="section-label">Paso 01</p>
+          <h3>Captura sin Esfuerzo</h3>
+          <p>El primer paso para el dominio es la captura fiel. Ya sea grabando la clase en vivo o subiendo PDFs densos, el secreto está en no perder energía transcribiendo, sino escuchando.</p>
+        </div>
+        <div class="method-visual">
+          <div class="iphone-mockup">
+            <div class="iphone-screen">
+              <img src="./app_screen_record.png" alt="Captura de Audio">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="method-step">
+        <div class="method-info">
+          <p class="section-label">Paso 02</p>
+          <h3>Procesamiento por IA</h3>
+          <p>KlasperAI analiza tu material y detecta automáticamente conceptos clave, fechas y definiciones. Convierte horas de crudo en minutos de contenido digerible.</p>
+        </div>
+        <div class="method-visual">
+          <div class="iphone-mockup">
+            <div class="iphone-screen">
+              <img src="./app_screen_question.png" alt="Flashcards Generadas">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="method-step">
+        <div class="method-info">
+          <p class="section-label">Paso 03</p>
+          <h3>Active Recall (Recuperación Activa)</h3>
+          <p>El aprendizaje real sucede cuando <em>sacas</em> información de tu cerebro, no cuando la metes. Nuestras flashcards te obligan a recordar, fortaleciendo las conexiones neuronales.</p>
+        </div>
+        <div class="method-visual">
+          <div class="iphone-mockup">
+            <div class="iphone-screen">
+              <img src="./app_screen_answer.png" alt="Repaso con Flashcards">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="method-step">
+        <div class="method-info">
+          <p class="section-label">Paso 04</p>
+          <h3>Spaced Repetition (Repetición Espaciada)</h3>
+          <p>La app sabe exactamente cuándo estás a punto de olvidar un concepto. Te lo mostrará justo en ese momento crítico para grabarlo permanentemente en tu memoria a largo plazo.</p>
+        </div>
+        <div class="method-visual">
+          <div class="iphone-mockup">
+            <div class="iphone-screen">
+              <img src="./app_screen_dashboard.png" alt="Dashboard de Estudio">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="final-cta" style="text-align: center; margin-top: 120px;">
+        <h2 style="margin-bottom: 20px;">¿Listo para poner esto en práctica?</h2>
+        <p style="margin-bottom: 40px;">No necesitas memorizar este método. KlasperAI lo hace por ti.</p>
+        <a class="btn-glow" href="#" style="height: 54px; border-radius: 12px; padding: 0 40px;">Descargar KlasperAI Gratis</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="padding: 100px 0; text-align: center; border-top: 1px solid var(--border);">
+    <p style="color: var(--text-dim); font-size: 0.85rem;">© 2026 KlasperAI. Todo el conocimiento, en menos tiempo.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
