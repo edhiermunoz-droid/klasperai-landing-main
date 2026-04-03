@@ -161,6 +161,38 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
+/* ---------- LANGUAGE TOGGLE ---------- */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 28px;
+  border-radius: 14px;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.lang-toggle:hover {
+  color: #fff;
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+  transform: scale(1.05);
+}
+
+.lang-toggle:active {
+  transform: scale(0.97);
+}
+
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
@@ -1086,6 +1118,21 @@ tr:last-child td {
 
   .menu-toggle {
     display: flex;
+  }
+
+  /* Language toggle in mobile nav */
+  nav.nav-open .lang-toggle {
+    width: 56px;
+    height: 36px;
+    font-size: 0.85rem;
+    border-radius: 18px;
+    margin-top: 8px;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  nav.nav-open .lang-toggle:hover {
+    border-bottom: none;
   }
 
   /* Hero */

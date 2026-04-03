@@ -46,8 +46,9 @@
       <span>KlasperAI</span>
     </a>
     <nav id="mainNav">
-      <a href="./index.html">← Inicio</a>
-      <a href="./terms.html">Términos de Uso</a>
+      <a href="./index.html" data-i18n="nav.back">← Inicio</a>
+      <a href="./terms.html" data-i18n="nav.terms">Términos de Uso</a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
     </nav>
     <button class="menu-toggle" id="menuBtn" aria-label="Menú">
       <span></span><span></span>
@@ -57,98 +58,98 @@
   <main>
     <!-- ===== HEADER ===== -->
     <div class="legal-header">
-      <p class="section-label">Legal</p>
-      <h1>Política de Privacidad</h1>
-      <p class="update-date">Última actualización: 11 de marzo de 2026</p>
+      <p class="section-label" data-i18n="privacy.label">Legal</p>
+      <h1 data-i18n="privacy.h1">Política de Privacidad</h1>
+      <p class="update-date" data-i18n="privacy.date">Última actualización: 11 de marzo de 2026</p>
     </div>
 
     <!-- ===== CONTENT ===== -->
     <div class="legal-content">
 
       <div class="legal-section">
-        <p>En KlasperAI, nos tomamos muy en serio la privacidad de tus datos. Esta Política de Privacidad describe
+        <p data-i18n="privacy.intro">En KlasperAI, nos tomamos muy en serio la privacidad de tus datos. Esta Política de Privacidad describe
           cómo recopilamos, usamos y protegemos tu información cuando utilizas nuestra aplicación móvil para iOS.</p>
       </div>
 
       <div class="legal-section">
-        <h2>1. Información que Recopilamos</h2>
+        <h2 data-i18n="privacy.s1_title">1. Información que Recopilamos</h2>
 
-        <h3>1.1. Información Proporcionada por el Usuario</h3>
+        <h3 data-i18n="privacy.s1_1_title">1.1. Información Proporcionada por el Usuario</h3>
         <ul>
-          <li><strong>Identidad:</strong> Cuando utilizas "Sign in with Apple", recibimos tu identificador de usuario
+          <li data-i18n-html="privacy.s1_1_identity"><strong>Identidad:</strong> Cuando utilizas "Sign in with Apple", recibimos tu identificador de usuario
             único, nombre y correo electrónico. Esta información se almacena localmente en tu dispositivo para
             gestionar tu perfil y suscripciones.</li>
-          <li><strong>Contenido de Audio:</strong> Para la función de transcripción, la aplicación captura audio a
+          <li data-i18n-html="privacy.s1_1_audio"><strong>Contenido de Audio:</strong> Para la función de transcripción, la aplicación captura audio a
             través del micrófono. Este audio se transmite de forma segura a través de nuestro proxy a los servidores
             de procesamiento (Groq) para convertirse en texto. No almacenamos tu audio de forma permanente en
             nuestros servidores.</li>
-          <li><strong>Contenido Generado:</strong> Los textos de tus clases, resúmenes, flashcards y búsquedas
+          <li data-i18n-html="privacy.s1_1_content"><strong>Contenido Generado:</strong> Los textos de tus clases, resúmenes, flashcards y búsquedas
             académicas se almacenan localmente en tu dispositivo mediante SwiftData/CoreData.</li>
         </ul>
 
-        <h3>1.2. Datos de Uso y Diagnóstico</h3>
-        <p>Recopilamos información sobre el uso de la aplicación, como el saldo de tokens consumidos y las
+        <h3 data-i18n="privacy.s1_2_title">1.2. Datos de Uso y Diagnóstico</h3>
+        <p data-i18n="privacy.s1_2_desc">Recopilamos información sobre el uso de la aplicación, como el saldo de tokens consumidos y las
           funciones utilizadas, para garantizar el correcto funcionamiento del sistema de suscripción.</p>
       </div>
 
       <div class="legal-section">
-        <h2>2. Uso de la Información</h2>
-        <p>Utilizamos la información recopilada para:</p>
+        <h2 data-i18n="privacy.s2_title">2. Uso de la Información</h2>
+        <p data-i18n="privacy.s2_intro">Utilizamos la información recopilada para:</p>
         <ul>
-          <li>Proporcionar las funciones principales de la aplicación (transcripción, resúmenes, búsqueda).</li>
-          <li>Gestionar tus suscripciones y compras dentro de la aplicación.</li>
-          <li>Sincronizar tu progreso y contenido localmente en tu dispositivo.</li>
+          <li data-i18n="privacy.s2_item1">Proporcionar las funciones principales de la aplicación (transcripción, resúmenes, búsqueda).</li>
+          <li data-i18n="privacy.s2_item2">Gestionar tus suscripciones y compras dentro de la aplicación.</li>
+          <li data-i18n="privacy.s2_item3">Sincronizar tu progreso y contenido localmente en tu dispositivo.</li>
         </ul>
       </div>
 
       <div class="legal-section">
-        <h2>3. Intercambio de Datos con Terceros</h2>
-        <p>No vendemos tus datos a terceros. Para proporcionar nuestras funciones de Inteligencia Artificial,
+        <h2 data-i18n="privacy.s3_title">3. Intercambio de Datos con Terceros</h2>
+        <p data-i18n="privacy.s3_intro">No vendemos tus datos a terceros. Para proporcionar nuestras funciones de Inteligencia Artificial,
           compartimos datos específicos con:</p>
         <ul>
-          <li><strong>Groq, Inc.:</strong> Enviamos clips de audio para transcripción y texto para generación de
+          <li data-i18n-html="privacy.s3_groq"><strong>Groq, Inc.:</strong> Enviamos clips de audio para transcripción y texto para generación de
             contenido.</li>
-          <li><strong>Perplexity AI:</strong> Enviamos tus consultas de búsqueda para la función de Búsqueda
+          <li data-i18n-html="privacy.s3_perplexity"><strong>Perplexity AI:</strong> Enviamos tus consultas de búsqueda para la función de Búsqueda
             Académica.</li>
         </ul>
         <div class="legal-note">
-          <p>Estas transferencias se realizan de forma anónima siempre que es posible y únicamente con el
+          <p data-i18n="privacy.s3_note">Estas transferencias se realizan de forma anónima siempre que es posible y únicamente con el
             propósito de procesar la solicitud del usuario.</p>
         </div>
       </div>
 
       <div class="legal-section">
-        <h2>4. Retención de Datos</h2>
-        <p>Tus datos personales e historial de clases se almacenan principalmente en tu dispositivo. Si eliminas
+        <h2 data-i18n="privacy.s4_title">4. Retención de Datos</h2>
+        <p data-i18n="privacy.s4_desc">Tus datos personales e historial de clases se almacenan principalmente en tu dispositivo. Si eliminas
           la aplicación, estos datos se eliminarán del dispositivo a menos que utilices funciones de copia de
           seguridad externas gestionadas por ti.</p>
       </div>
 
       <div class="legal-section">
-        <h2>5. Permisos del Sistema</h2>
-        <p>La app solicita acceso a:</p>
+        <h2 data-i18n="privacy.s5_title">5. Permisos del Sistema</h2>
+        <p data-i18n="privacy.s5_intro">La app solicita acceso a:</p>
         <ul>
-          <li><strong>Micrófono:</strong> Obligatorio para grabar clases y reuniones.</li>
-          <li><strong>Calendario:</strong> Opcional, para añadir recordatorios o eventos detectados por la IA.</li>
+          <li data-i18n-html="privacy.s5_mic"><strong>Micrófono:</strong> Obligatorio para grabar clases y reuniones.</li>
+          <li data-i18n-html="privacy.s5_cal"><strong>Calendario:</strong> Opcional, para añadir recordatorios o eventos detectados por la IA.</li>
         </ul>
       </div>
 
       <div class="legal-section">
-        <h2>6. Tus Derechos (GDPR / CCPA)</h2>
-        <p>Tienes derecho a:</p>
+        <h2 data-i18n="privacy.s6_title">6. Tus Derechos (GDPR / CCPA)</h2>
+        <p data-i18n="privacy.s6_intro">Tienes derecho a:</p>
         <ul>
-          <li>Acceder a tus datos almacenados en la app.</li>
-          <li>Solicitar la eliminación de tus datos (puedes hacerlo eliminando tu cuenta o la app).</li>
-          <li>Retirar los permisos de micrófono o calendario en cualquier momento desde los Ajustes de iOS.</li>
+          <li data-i18n="privacy.s6_item1">Acceder a tus datos almacenados en la app.</li>
+          <li data-i18n="privacy.s6_item2">Solicitar la eliminación de tus datos (puedes hacerlo eliminando tu cuenta o la app).</li>
+          <li data-i18n="privacy.s6_item3">Retirar los permisos de micrófono o calendario en cualquier momento desde los Ajustes de iOS.</li>
         </ul>
-        <p>Para cualquier consulta sobre privacidad, contáctanos en:
+        <p><span data-i18n="privacy.s6_contact">Para cualquier consulta sobre privacidad, contáctanos en:</span>
           <a href="mailto:support@klasperai.com">support@klasperai.com</a>
         </p>
       </div>
 
       <div class="legal-section">
-        <h2>7. Cambios a esta Política</h2>
-        <p>Podemos actualizar esta política ocasionalmente. Te notificaremos cualquier cambio importante a través
+        <h2 data-i18n="privacy.s7_title">7. Cambios a esta Política</h2>
+        <p data-i18n="privacy.s7_desc">Podemos actualizar esta política ocasionalmente. Te notificaremos cualquier cambio importante a través
           de la aplicación.</p>
       </div>
 
@@ -181,14 +182,16 @@
         </a>
       </div>
       <div class="footer-legal-links">
-        <a href="./privacy.html">Política de Privacidad</a>
-        <a href="./terms.html">Términos de Uso</a>
-        <a href="mailto:support@klasperai.com">Contacto</a>
+        <a href="./privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+        <a href="./terms.html" data-i18n="footer.terms">Términos de Uso</a>
+        <a href="mailto:support@klasperai.com" data-i18n="footer.contact">Contacto</a>
       </div>
-      <p class="footer-copy">© <span id="year"></span> KlasperAI. Tu asistente de estudio inteligente para iOS.</p>
+      <p class="footer-copy">© <span id="year"></span> <span data-i18n="footer.copy">KlasperAI. Tu asistente de estudio inteligente para iOS.</span></p>
     </div>
   </footer>
 
+  <script src="./translations.js"></script>
+  <script src="./i18n.js"></script>
   <script src="./script.js"></script>
 </body>
 

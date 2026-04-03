@@ -46,8 +46,9 @@
       <span>KlasperAI</span>
     </a>
     <nav id="mainNav">
-      <a href="./index.html">← Inicio</a>
-      <a href="./privacy.html">Política de Privacidad</a>
+      <a href="./index.html" data-i18n="nav.back">← Inicio</a>
+      <a href="./privacy.html" data-i18n="nav.privacy">Política de Privacidad</a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
     </nav>
     <button class="menu-toggle" id="menuBtn" aria-label="Menú">
       <span></span><span></span>
@@ -57,62 +58,62 @@
   <main>
     <!-- ===== HEADER ===== -->
     <div class="legal-header">
-      <p class="section-label">Legal</p>
-      <h1>Términos y Condiciones de Uso</h1>
-      <p class="update-date">Fecha de entrada en vigor: 11 de marzo de 2026</p>
+      <p class="section-label" data-i18n="terms.label">Legal</p>
+      <h1 data-i18n="terms.h1">Términos y Condiciones de Uso</h1>
+      <p class="update-date" data-i18n="terms.date">Fecha de entrada en vigor: 11 de marzo de 2026</p>
     </div>
 
     <!-- ===== CONTENT ===== -->
     <div class="legal-content">
 
       <div class="legal-section">
-        <p>Al descargar o utilizar la aplicación KlasperAI, aceptas cumplir estos Términos de Uso. Si no estás de
+        <p data-i18n="terms.intro">Al descargar o utilizar la aplicación KlasperAI, aceptas cumplir estos Términos de Uso. Si no estás de
           acuerdo con alguno de ellos, no utilices la aplicación.</p>
       </div>
 
       <div class="legal-section">
-        <h2>1. Descripción del Servicio</h2>
-        <p>KlasperAI es una herramienta educativa asistida por Inteligencia Artificial que permite transcribir
+        <h2 data-i18n="terms.s1_title">1. Descripción del Servicio</h2>
+        <p data-i18n="terms.s1_desc">KlasperAI es una herramienta educativa asistida por Inteligencia Artificial que permite transcribir
           audio, generar resúmenes, realizar búsquedas académicas y crear material de estudio.</p>
       </div>
 
       <div class="legal-section">
-        <h2>2. Suscripciones y Tokens</h2>
+        <h2 data-i18n="terms.s2_title">2. Suscripciones y Tokens</h2>
         <ul>
-          <li><strong>Planes:</strong> Ofrecemos planes "Básico" y "Pro" con diferentes límites de tokens.</li>
-          <li><strong>Pagos:</strong> Se gestionan a través de Apple StoreKit. Las suscripciones se renuevan
+          <li data-i18n-html="terms.s2_plans"><strong>Planes:</strong> Ofrecemos planes "Básico" y "Pro" con diferentes límites de tokens.</li>
+          <li data-i18n-html="terms.s2_payments"><strong>Pagos:</strong> Se gestionan a través de Apple StoreKit. Las suscripciones se renuevan
             automáticamente a menos que se cancelen 24 horas antes del fin del periodo activo.</li>
-          <li><strong>Tokens:</strong> Los tokens son una medida de consumo de servicios de IA. Los tokens no
+          <li data-i18n-html="terms.s2_tokens"><strong>Tokens:</strong> Los tokens son una medida de consumo de servicios de IA. Los tokens no
             consumidos no suelen ser reembolsables y están sujetos a las políticas de Apple.</li>
         </ul>
       </div>
 
       <div class="legal-section">
-        <h2>3. Uso Aceptable</h2>
-        <p>Te comprometes a <strong>no</strong> usar KlasperAI para:</p>
+        <h2 data-i18n="terms.s3_title">3. Uso Aceptable</h2>
+        <p data-i18n-html="terms.s3_intro">Te comprometes a <strong>no</strong> usar KlasperAI para:</p>
         <ul>
-          <li>Generar contenido ilegal, difamatorio o que infrinja derechos de autor.</li>
-          <li>Realizar plagio académico. La app es una herramienta de apoyo y no sustituye el trabajo
+          <li data-i18n="terms.s3_item1">Generar contenido ilegal, difamatorio o que infrinja derechos de autor.</li>
+          <li data-i18n="terms.s3_item2">Realizar plagio académico. La app es una herramienta de apoyo y no sustituye el trabajo
             intelectual propio.</li>
-          <li>Intentar vulnerar la seguridad de la aplicación o sus APIs.</li>
+          <li data-i18n="terms.s3_item3">Intentar vulnerar la seguridad de la aplicación o sus APIs.</li>
         </ul>
       </div>
 
       <div class="legal-section">
-        <h2>4. Propiedad Intelectual</h2>
+        <h2 data-i18n="terms.s4_title">4. Propiedad Intelectual</h2>
         <ul>
-          <li><strong>Tu Contenido:</strong> Eres el propietario de los audios originales y los textos que
+          <li data-i18n-html="terms.s4_your"><strong>Tu Contenido:</strong> Eres el propietario de los audios originales y los textos que
             proporciones.</li>
-          <li><strong>Contenido IA:</strong> KlasperAI te otorga los derechos de uso sobre los resúmenes y
+          <li data-i18n-html="terms.s4_ai"><strong>Contenido IA:</strong> KlasperAI te otorga los derechos de uso sobre los resúmenes y
             materiales generados por la IA para tus fines educativos personales o profesionales.</li>
-          <li><strong>App:</strong> KlasperAI y su diseño son propiedad intelectual de KlasperAI.</li>
+          <li data-i18n-html="terms.s4_app"><strong>App:</strong> KlasperAI y su diseño son propiedad intelectual de KlasperAI.</li>
         </ul>
       </div>
 
       <div class="legal-section">
-        <h2>5. Limitación de Responsabilidad</h2>
+        <h2 data-i18n="terms.s5_title">5. Limitación de Responsabilidad</h2>
         <div class="legal-note">
-          <p><strong>IMPORTANTE:</strong> La Inteligencia Artificial puede generar errores, alucinaciones o
+          <p data-i18n-html="terms.s5_note"><strong>IMPORTANTE:</strong> La Inteligencia Artificial puede generar errores, alucinaciones o
             información inexacta. KlasperAI no se hace responsable de las decisiones tomadas basadas en el
             contenido generado por la IA. El usuario debe verificar siempre la información crítica antes de
             utilizarla.</p>
@@ -120,14 +121,14 @@
       </div>
 
       <div class="legal-section">
-        <h2>6. Modificaciones</h2>
-        <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de la
+        <h2 data-i18n="terms.s6_title">6. Modificaciones</h2>
+        <p data-i18n="terms.s6_desc">Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de la
           app tras la publicación de un cambio implica la aceptación de los nuevos términos.</p>
       </div>
 
       <div class="legal-section">
-        <h2>7. Contacto</h2>
-        <p>Para soporte o consultas legales, escríbenos a:
+        <h2 data-i18n="terms.s7_title">7. Contacto</h2>
+        <p><span data-i18n="terms.s7_desc">Para soporte o consultas legales, escríbenos a:</span>
           <a href="mailto:support@klasperai.com">support@klasperai.com</a>
         </p>
       </div>
@@ -161,14 +162,16 @@
         </a>
       </div>
       <div class="footer-legal-links">
-        <a href="./privacy.html">Política de Privacidad</a>
-        <a href="./terms.html">Términos de Uso</a>
-        <a href="mailto:support@klasperai.com">Contacto</a>
+        <a href="./privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+        <a href="./terms.html" data-i18n="footer.terms">Términos de Uso</a>
+        <a href="mailto:support@klasperai.com" data-i18n="footer.contact">Contacto</a>
       </div>
-      <p class="footer-copy">© <span id="year"></span> KlasperAI. Tu asistente de estudio inteligente para iOS.</p>
+      <p class="footer-copy">© <span id="year"></span> <span data-i18n="footer.copy">KlasperAI. Tu asistente de estudio inteligente para iOS.</span></p>
     </div>
   </footer>
 
+  <script src="./translations.js"></script>
+  <script src="./i18n.js"></script>
   <script src="./script.js"></script>
 </body>
 
