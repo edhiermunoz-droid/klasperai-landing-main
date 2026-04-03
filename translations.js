@@ -34,7 +34,7 @@ const TRANSLATIONS = {
   "hero.trust": { es: "7 días de prueba gratis. Tu privacidad garantizada.", en: "7-day free trial. Your privacy guaranteed." },
 
   // Portal quote
-  "hero.quote": { es: '"No aprendemos de la experiencia... aprendemos al reflexionar sobre la experiencia."', en: '"We do not learn from experience... we learn from reflecting on experience."' },
+  "hero.quote": { es: '"El aprendizaje es natural; es un proceso que surge de la curiosidad y la necesidad de entender el mundo."', en: '"Learning is natural; it is a process that arises from curiosity and the need to understand the world."' },
   "hero.quote_author": { es: "John Dewey", en: "John Dewey" },
   "hero.quote_role": { es: "Filósofo y pedagogo · 1859 – 1952", en: "Philosopher and educator · 1859 – 1952" },
 
