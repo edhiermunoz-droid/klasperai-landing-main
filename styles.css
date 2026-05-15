@@ -2091,10 +2091,19 @@ tr:last-child td {
 }
 
 .sticky-cta.is-active {
+  display: block; /* Make it visible before fading in */
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: block;
+    opacity: 0;
+  }
+}
+
 
 .sticky-cta-btn {
   width: 100%;

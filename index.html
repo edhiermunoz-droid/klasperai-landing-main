@@ -22,10 +22,10 @@
   <style>
     /* Critical fallback for Modal to prevent unstyled flash in production */
     .modal-overlay {
-      position: fixed; inset: 0; z-index: 9999;
-      background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px);
+      position: fixed; inset: 0; z-index: 999999 !important;
+      background: rgba(8, 6, 14, 0.95); backdrop-filter: blur(15px);
       display: none; align-items: center; justify-content: center;
-      opacity: 0; transition: opacity 0.4s ease;
+      opacity: 0; transition: opacity 0.3s ease;
     }
     #betaEmail,
 #betaName {
@@ -115,7 +115,7 @@
       <a href="#producto" data-i18n="nav.product">Producto</a>
       <a href="#funciona" data-i18n="nav.process">Proceso</a>
       <a href="#datos" data-i18n="nav.evidence">Evidencia</a>
-      <a class="nav-cta-btn btn-glow" href="#final" style="padding: 8px 16px; min-width: auto; font-size: 0.75rem;" data-i18n="nav.download">Descargar</a>
+      <a class="nav-cta-btn btn-glow trigger-beta-modal" href="#" style="padding: 8px 16px; min-width: auto; font-size: 0.75rem;" data-i18n="nav.download">Descargar</a>
       <button class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
     </nav>
     <button class="menu-toggle" id="menuBtn" aria-label="Menú">
