@@ -854,7 +854,7 @@ td {
 /* Specific column widths for better balance */
 th:nth-child(1), td:nth-child(1) { width: 30%; }
 th:nth-child(2), td:nth-child(2) { width: 35%; color: var(--text-dim); }
-th:nth-child(3), td:nth-child(3) { width: 35%; color: #fff; font-weight: 500; }
+th:nth-child(3), td:nth-child(3) { width: 35%; color: var(--text); font-weight: 500; }
 
 tr:last-child td {
   border-bottom: none;
@@ -2531,7 +2531,7 @@ html[data-theme="light"] .legal-note {
 .showcase-item h3 {
   font-family: var(--serif);
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--text);
   text-align: center;
   margin-top: 20px;
 }
