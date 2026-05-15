@@ -206,16 +206,16 @@ if (menuBtn && mainNav) {
     document.body.style.overflow = "";
   }
 
-  // Trigger from all Beta Buttons
+  // Trigger from all Beta Buttons using Event Delegation (more robust)
   let activeTriggerType = 'download'; // 'download' or 'guide'
 
-  const betaButtons = document.querySelectorAll(".trigger-beta-modal");
-  betaButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".trigger-beta-modal");
+    if (btn) {
       e.preventDefault();
       activeTriggerType = btn.classList.contains('lead-magnet-btn') ? 'guide' : 'download';
       openModal();
-    });
+    }
   });
 
 
