@@ -8,7 +8,7 @@ const TRANSLATIONS = {
   "nav.product": { es: "Producto", en: "Product" },
   "nav.process": { es: "Proceso", en: "Process" },
   "nav.evidence": { es: "Evidencia", en: "Evidence" },
-  "nav.download": { es: "Descargar", en: "Download" },
+  "nav.download": { es: "Beta", en: "Beta" },
   "nav.back": { es: "← Inicio", en: "← Home" },
   "nav.back_guide": { es: "Volver", en: "Back" },
   "nav.privacy": { es: "Política de Privacidad", en: "Privacy Policy" },
@@ -19,7 +19,7 @@ const TRANSLATIONS = {
   "footer.terms": { es: "Términos de Uso", en: "Terms of Use" },
   "footer.contact": { es: "Contacto", en: "Contact" },
 
-  "sticky.cta": { es: "Probar Beta Gratis", en: "Try Beta Free" },
+  "sticky.cta": { es: "Unirse a la Beta", en: "Join Beta" },
 
   // ===== URGENCY BAR =====
   "urgency.text": { es: "Acceso Beta: Prueba cualquier plan gratis por tiempo limitado.", en: "Beta Access: Try any plan for free for a limited time." },
@@ -144,7 +144,7 @@ const TRANSLATIONS = {
   "cta.label": { es: "Empieza ahora", en: "Start now" },
   "cta.title": { es: 'El semestre que viene,<br>¿seguirás estudiando igual?', en: 'Next semester,<br>will you keep studying the same way?' },
   "cta.desc": { es: 'Únete a la beta hoy y prueba cualquier plan <strong>sin costo</strong>. No se te cobrará nada durante este periodo.', en: 'Join the beta today and try any plan <strong>for free</strong>. You won\'t be charged during this period.' },
-  "cta.download": { es: "Unirse a la Beta en TestFlight", en: "Join Beta on TestFlight" },
+  "cta.download": { es: "Unirse a la Beta", en: "Join Beta" },
 
   "trust.no_cc": { es: "Sin tarjeta de crédito", en: "No credit card required" },
   "trust.cancel": { es: "Cancela cuando quieras", en: "Cancel anytime" },
@@ -175,7 +175,7 @@ const TRANSLATIONS = {
   "modal.desc": { es: "Déjanos tu nombre y correo para recibir noticias y desbloquear tu enlace de descarga para iOS.", en: "Leave your name and email to receive news and unlock your download link for iOS." },
   "modal.placeholder_name": { es: "Tu nombre", en: "Your name" },
   "modal.placeholder_email": { es: "tu@email.com", en: "your@email.com" },
-  "modal.cta": { es: "Obtener Acceso Beta", en: "Get Beta Access" },
+  "modal.cta": { es: "Obtener Acceso Gratis", en: "Get Free Access" },
   "modal.success_title": { es: "¡Ya casi estás!", en: "You're almost there!" },
   "modal.success_desc": { es: "Gracias por unirte. Aquí tienes tu enlace directo para TestFlight:", en: "Thanks for joining. Here is your direct link for TestFlight:" },
   "modal.success_cta": { es: "Abrir en TestFlight", en: "Open in TestFlight" },
