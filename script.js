@@ -2,6 +2,43 @@
    KlasperAI — Script (Arcane-inspired)
    ======================================================== */
 
+// ---------- THEME TOGGLE ----------
+(function initTheme() {
+  const toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
+
+  function getTheme() {
+    return document.documentElement.getAttribute("data-theme") || "dark";
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("klasper_theme", theme);
+    toggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Cambiar a modo luz" : "Cambiar a modo oscuro"
+    );
+  }
+
+  toggle.addEventListener("click", () => {
+    setTheme(getTheme() === "dark" ? "light" : "dark");
+  });
+
+  // Sync aria-label on load without writing to localStorage
+  const current = getTheme();
+  toggle.setAttribute(
+    "aria-label",
+    current === "dark" ? "Cambiar a modo luz" : "Cambiar a modo oscuro"
+  );
+
+  // Follow system preference when no manual override is saved
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!localStorage.getItem("klasper_theme")) {
+      document.documentElement.setAttribute("data-theme", e.matches ? "dark" : "light");
+    }
+  });
+})();
+
 // ---------- STARFIELD CANVAS ----------
 (function initStarfield() {
   const canvas = document.getElementById("starfield");
@@ -172,10 +209,31 @@ if (menuBtn && mainNav) {
   const form = document.getElementById("betaForm");
   const formStep = document.getElementById("modalStepForm");
   const successStep = document.getElementById("modalStepSuccess");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
 
   if (!modal) return;
 
+  let activeTriggerType = 'download'; // 'download' or 'guide'
+
+  function updateModalContent() {
+    if (!modalTitle || !modalDesc) return;
+    const isES = !window.KlasperI18n || window.KlasperI18n.getLanguage() === 'es';
+    if (activeTriggerType === 'guide') {
+      modalTitle.textContent = isES ? 'Recibe la Guía Gratis' : 'Get the Free Guide';
+      modalDesc.textContent  = isES
+        ? 'Déjanos tu correo y te enviamos la guía interactiva de inmediato.'
+        : 'Leave your email and we\'ll send you the interactive guide immediately.';
+    } else {
+      modalTitle.textContent = isES ? 'Acceso Beta Exclusivo' : 'Exclusive Beta Access';
+      modalDesc.textContent  = isES
+        ? 'Déjanos tu nombre y correo para recibir noticias y desbloquear tu enlace de descarga para iOS.'
+        : 'Leave your name and email to receive news and unlock your download link for iOS.';
+    }
+  }
+
   function openModal() {
+    updateModalContent();
     modal.classList.add("is-active");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -187,9 +245,6 @@ if (menuBtn && mainNav) {
     document.body.style.overflow = "";
   }
 
-  // Trigger from all Beta Buttons using Event Delegation (more robust)
-  let activeTriggerType = 'download'; // 'download' or 'guide'
-
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".trigger-beta-modal");
     if (btn) {
@@ -198,8 +253,6 @@ if (menuBtn && mainNav) {
       openModal();
     }
   });
-
-
 
   // Auto-open for mobile after 12 seconds (if not closed)
   const isMobile = window.innerWidth <= 768;
@@ -210,7 +263,7 @@ if (menuBtn && mainNav) {
       activeTriggerType = 'download';
       openModal();
       localStorage.setItem("klasper_beta_modal_seen", "true");
-    }, 12000); 
+    }, 12000);
   }
 
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
@@ -218,34 +271,75 @@ if (menuBtn && mainNav) {
     if (e.target === modal) closeModal();
   });
 
+  // Form validation helpers
+  function showError(inputEl, errorEl, msg) {
+    inputEl.classList.add("input-error");
+    errorEl.textContent = msg;
+    errorEl.style.display = "block";
+  }
+
+  function clearError(inputEl, errorEl) {
+    inputEl.classList.remove("input-error");
+    errorEl.style.display = "none";
+  }
+
   // Form Submission
   if (form) {
+    const nameInput  = document.getElementById("betaName");
+    const emailInput = document.getElementById("betaEmail");
+    const nameError  = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const submitBtn  = form.querySelector("button[type='submit']");
+
+    nameInput.addEventListener("input", () => clearError(nameInput, nameError));
+    emailInput.addEventListener("input", () => clearError(emailInput, emailError));
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("betaName").value;
-      const email = document.getElementById("betaEmail").value;
-      
+      const isES = !window.KlasperI18n || window.KlasperI18n.getLanguage() === 'es';
+      const name  = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      let valid = true;
+
+      if (name.length < 2) {
+        showError(nameInput, nameError, isES ? 'Ingresa al menos 2 caracteres.' : 'Enter at least 2 characters.');
+        valid = false;
+      }
+      if (!emailRegex.test(email)) {
+        showError(emailInput, emailError, isES ? 'Ingresa un correo válido.' : 'Enter a valid email.');
+        valid = false;
+      }
+      if (!valid) return;
+
+      // Loading state
+      const originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = isES ? 'Enviando...' : 'Sending...';
+
       const payload = {
-        name: name,
-        email: email,
+        name,
+        email,
         source: activeTriggerType,
         timestamp: new Date().toISOString(),
         url: window.location.href
       };
 
-      // Send to Webhook (n8n)
       fetch('https://webhookn8n.soursop-ia.com/webhook/e47e0784-97af-414f-9bd5-73145b519710', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors', // Standard for many webhooks to avoid CORS issues
+        mode: 'no-cors',
         body: JSON.stringify(payload)
-      }).catch(err => console.warn("Webhook background sync error:", err));
+      }).catch(err => console.warn("Webhook background sync error:", err)).finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      });
 
       console.log("Lead captured:", payload);
       localStorage.setItem("klasper_beta_converted", "true");
 
       if (activeTriggerType === 'guide') {
-        formStep.innerHTML = `<h2>Redirigiendo...</h2><p>Gracias ${name}, estamos abriendo tu guía.</p>`;
+        formStep.innerHTML = `<h2>${isES ? 'Redirigiendo...' : 'Redirecting...'}</h2><p>${isES ? `Gracias ${name}, estamos abriendo tu guía.` : `Thanks ${name}, opening your guide.`}</p>`;
         setTimeout(() => {
           window.location.href = 'guia.html';
         }, 1500);

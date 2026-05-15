@@ -4,7 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Theme init — runs before CSS to prevent flash of wrong theme -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('klasper_theme');
+      var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', t || (dark ? 'dark' : 'light'));
+    })();
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./AppStore_1024.png">
   <link rel="apple-touch-icon" href="./AppStore_1024.png">
@@ -118,6 +128,15 @@
       <a href="#datos" data-i18n="nav.evidence">Evidencia</a>
       <a class="nav-cta-btn btn-glow trigger-beta-modal" href="#" style="padding: 8px 16px; min-width: auto; font-size: 0.75rem;" data-i18n="nav.download">Descargar</a>
       <button class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar a modo luz">
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
     </nav>
     <button class="menu-toggle" id="menuBtn" aria-label="Menú">
       <span></span><span></span>
@@ -160,7 +179,7 @@
         <div class="portal-wrap">
           <div class="portal">
             <div class="portal-inner">
-              <img src="./dewey.png" alt="Retrato ilustración" class="portal-image">
+              <img src="./dewey.png" alt="Retrato ilustrado de John Dewey, filósofo y pedagogo estadounidense" class="portal-image">
             </div>
             <div class="portal-light"></div>
           </div>
@@ -629,12 +648,14 @@
     <div class="modal-container">
       <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
       <div id="modalStepForm">
-        <h2 data-i18n="modal.title">Acceso Beta Exclusivo</h2>
-        <p data-i18n="modal.desc">Déjanos tu correo para recibir noticias y desbloquear tu enlace de descarga para iOS.</p>
+        <h2 id="modalTitle" data-i18n="modal.title">Acceso Beta Exclusivo</h2>
+        <p id="modalDesc" data-i18n="modal.desc">Déjanos tu correo para recibir noticias y desbloquear tu enlace de descarga para iOS.</p>
         <form id="betaForm">
           <input type="text" id="betaName" required placeholder="Tu nombre" data-i18n-placeholder="modal.placeholder_name">
+          <div id="nameError" class="form-error-msg" style="display:none"></div>
           <input type="email" id="betaEmail" required placeholder="tu@email.com" data-i18n-placeholder="modal.placeholder_email">
-          <button type="submit" class="btn-glow" data-i18n="modal.cta">Obtener Acceso Beta</button>
+          <div id="emailError" class="form-error-msg" style="display:none"></div>
+          <button type="submit" class="btn-glow" data-i18n="modal.cta">Obtener Acceso Gratis</button>
         </form>
       </div>
       <div id="modalStepSuccess" class="hidden">

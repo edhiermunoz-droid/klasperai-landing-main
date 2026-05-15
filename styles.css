@@ -12,7 +12,7 @@
   --border-hover: rgba(139, 92, 246, 0.3);
   
   --text: #ffffff;
-  --text-dim: rgba(255, 255, 255, 0.5);
+  --text-dim: rgba(255, 255, 255, 0.6);
   --text-body: rgba(255, 255, 255, 0.7);
   
   --accent: #8b5cf6;
@@ -153,7 +153,7 @@ nav a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 12px 8px;
 }
 
 .menu-toggle span {
@@ -170,8 +170,8 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 28px;
+  min-width: 44px;
+  height: 36px;
   border-radius: 14px;
   font-family: var(--sans);
   font-size: 0.7rem;
@@ -308,8 +308,7 @@ nav a:hover {
       rgba(168, 85, 247, 0.08) 0%,
       rgba(139, 92, 246, 0.04) 50%,
       transparent 100%);
-  border: 1.5px solid;
-  border-image: linear-gradient(180deg, var(--accent) 0%, rgba(168, 85, 247, 0.15) 70%, transparent 100%) 1;
+  border: 1.5px solid rgba(139, 92, 246, 0.4);
   /* Optional floating animation for portal */
   animation: portalPulse 4s ease-in-out infinite alternate, float 6s ease-in-out infinite;
 }
@@ -410,10 +409,10 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 140px;
-  padding: 0 24px;
+  min-width: 160px;
+  padding: 0 28px;
   height: 48px;
-  border-radius: 9px;
+  border-radius: 100px;
   font-family: var(--sans);
   font-size: 0.85rem;
   font-weight: 600;
@@ -430,7 +429,7 @@ nav a:hover {
   content: '';
   position: absolute;
   inset: -1px;
-  border-radius: 9px;
+  border-radius: 100px;
   background: linear-gradient(135deg, var(--accent), var(--accent-deep));
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -451,9 +450,10 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 24px;
+  min-width: 160px;
+  padding: 0 28px;
   height: 48px;
-  border-radius: 9px;
+  border-radius: 100px;
   font-family: var(--sans);
   font-size: 0.85rem;
   font-weight: 600;
@@ -682,9 +682,7 @@ nav a:hover {
 
 .feature-card:hover {
   background: rgba(168, 85, 247, 0.06);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.15);
-  border-color: var(--border-hover);
+  box-shadow: inset 0 0 0 1px var(--border-hover);
 }
 
 .feature-icon {
@@ -1146,12 +1144,17 @@ tr:last-child td {
   }
 
   .hero-text {
-    order: 1;
+    order: 0;
   }
 
   .portal-wrap {
-    order: 0;
+    order: 1;
     min-height: 300px;
+  }
+
+  @keyframes portalPulse {
+    0%   { box-shadow: 0 0 20px rgba(168, 85, 247, .12), 0 0 40px rgba(139, 92, 246, .05), inset 0 0 20px rgba(168, 85, 247, .04); }
+    100% { box-shadow: 0 0 30px rgba(168, 85, 247, .18), 0 0 60px rgba(139, 92, 246, .07), inset 0 0 30px rgba(168, 85, 247, .07); }
   }
 
   .portal {
@@ -1266,7 +1269,7 @@ tr:last-child td {
   }
 
   .portal-wrap {
-    min-height: 280px; /* Increased for mobile floating room */
+    min-height: 280px;
     padding-top: 20px;
   }
 
@@ -2190,6 +2193,223 @@ tr:last-child td {
   }
 }
 
+/* ---------- THEME TOGGLE BUTTON ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 36px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  color: var(--text-dim);
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.97);
+}
+
+/* Icons — default dark: show sun (click → light) */
+.theme-toggle .icon-moon { display: none; }
+.theme-toggle .icon-sun  { display: flex; }
+
+html[data-theme="light"] .theme-toggle .icon-moon { display: flex; }
+html[data-theme="light"] .theme-toggle .icon-sun  { display: none; }
+
+
+/* ==========================================================
+   LIGHT THEME
+   ========================================================== */
+html[data-theme="light"] {
+  --bg: #f4f2ff;
+  --bg-subtle: #ede9ff;
+  --surface: rgba(109, 40, 217, 0.04);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(109, 40, 217, 0.35);
+  --text: #0f0a1e;
+  --text-dim: rgba(15, 10, 30, 0.5);
+  --text-body: rgba(15, 10, 30, 0.72);
+  --accent: #7c3aed;
+  --accent-soft: #6d28d9;
+  --accent-deep: #5b21b6;
+  --glow: rgba(109, 40, 217, 0.25);
+  --glow-wide: rgba(109, 40, 217, 0.07);
+}
+
+/* Topbar */
+html[data-theme="light"] .topbar.scrolled {
+  background: rgba(244, 242, 255, 0.92);
+  border-bottom-color: rgba(109, 40, 217, 0.12);
+  box-shadow: 0 4px 24px rgba(109, 40, 217, 0.08);
+}
+
+/* Starfield — invisible on light bg */
+html[data-theme="light"] #starfield { opacity: 0; }
+
+/* White-text overrides */
+html[data-theme="light"] .brand,
+html[data-theme="light"] .footer-brand,
+html[data-theme="light"] .hero-text h1,
+html[data-theme="light"] .quote,
+html[data-theme="light"] .section-title,
+html[data-theme="light"] .stat strong,
+html[data-theme="light"] .feature-card h3,
+html[data-theme="light"] .process-step h3,
+html[data-theme="light"] .evidence-card h3,
+html[data-theme="light"] .evidence-card strong,
+html[data-theme="light"] .compare-card h3,
+html[data-theme="light"] .cite-name,
+html[data-theme="light"] .pain-card h3,
+html[data-theme="light"] .pain-bridge strong,
+html[data-theme="light"] .lead-magnet-text h3,
+html[data-theme="light"] .blog-card h3,
+html[data-theme="light"] .modal-container h2,
+html[data-theme="light"] td:nth-child(3) {
+  color: var(--text);
+}
+
+/* Nav links */
+html[data-theme="light"] nav a:hover { color: var(--text); }
+html[data-theme="light"] nav.nav-open a {
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+
+/* Hamburger icon */
+html[data-theme="light"] .menu-toggle span { background: var(--text); }
+
+/* Lang + theme toggles */
+html[data-theme="light"] .lang-toggle,
+html[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+html[data-theme="light"] .lang-toggle:hover,
+html[data-theme="light"] .theme-toggle:hover {
+  background: rgba(109, 40, 217, 0.1);
+  border-color: rgba(109, 40, 217, 0.35);
+  box-shadow: 0 0 12px rgba(109, 40, 217, 0.15);
+}
+
+/* Hero badge */
+html[data-theme="light"] .hero-badge {
+  background: rgba(109, 40, 217, 0.06);
+  border-color: rgba(109, 40, 217, 0.18);
+}
+
+/* Buttons — solid fill for legible contrast on light bg */
+html[data-theme="light"] .btn-glow {
+  background: rgba(109, 40, 217, 0.82);
+  border-color: rgba(109, 40, 217, 0.5);
+  color: #fff;
+}
+html[data-theme="light"] .btn-glow:hover {
+  background: var(--accent);
+  box-shadow: 0 0 20px rgba(109, 40, 217, 0.35), 0 0 40px rgba(109, 40, 217, 0.1);
+}
+html[data-theme="light"] .nav-cta-btn {
+  background: rgba(109, 40, 217, 0.82) !important;
+  border-color: rgba(109, 40, 217, 0.5) !important;
+  color: #fff !important;
+}
+html[data-theme="light"] .nav-cta-btn:hover {
+  background: var(--accent) !important;
+  box-shadow: 0 0 25px rgba(109, 40, 217, 0.3) !important;
+}
+html[data-theme="light"] .btn-outline {
+  color: var(--text-body);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+html[data-theme="light"] .btn-outline:hover {
+  color: var(--text);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Pain cards */
+html[data-theme="light"] .pain-card {
+  background: rgba(109, 40, 217, 0.035);
+  border-color: rgba(109, 40, 217, 0.1);
+}
+
+/* Card hover backgrounds */
+html[data-theme="light"] .feature-card:hover,
+html[data-theme="light"] .process-step:hover,
+html[data-theme="light"] .evidence-card:hover {
+  background: rgba(109, 40, 217, 0.06);
+}
+
+/* Lead magnet */
+html[data-theme="light"] .lead-magnet {
+  background: rgba(109, 40, 217, 0.04);
+  border-color: rgba(109, 40, 217, 0.15);
+}
+html[data-theme="light"] .lead-magnet-badge {
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(91, 33, 182, 0.07));
+  border-color: rgba(109, 40, 217, 0.22);
+}
+
+/* Glow ellipse */
+html[data-theme="light"] .glow-ellipse {
+  background: radial-gradient(ellipse at center,
+    rgba(109, 40, 217, 0.12) 0%,
+    rgba(109, 40, 217, 0.05) 40%,
+    transparent 70%);
+}
+
+/* Portal — slightly stronger border color in light mode */
+html[data-theme="light"] .portal-inner {
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+/* Modal */
+html[data-theme="light"] .modal-container {
+  background: #ffffff;
+  border-color: rgba(109, 40, 217, 0.15);
+}
+html[data-theme="light"] .modal-close {
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.05);
+}
+html[data-theme="light"] .modal-close:hover { background: rgba(0, 0, 0, 0.1); }
+html[data-theme="light"] #betaEmail,
+html[data-theme="light"] #betaName {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text) !important;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+html[data-theme="light"] #betaEmail::placeholder,
+html[data-theme="light"] #betaName::placeholder { color: var(--text-dim); }
+html[data-theme="light"] #betaEmail:focus,
+html[data-theme="light"] #betaName:focus { background: rgba(0, 0, 0, 0.07) !important; }
+
+/* Sticky CTA gradient */
+html[data-theme="light"] .sticky-cta {
+  background: linear-gradient(180deg, transparent 0%, rgba(244, 242, 255, 0.97) 32%);
+}
+
+/* Legal pages */
+html[data-theme="light"] .legal-header h1,
+html[data-theme="light"] .legal-section h2,
+html[data-theme="light"] .legal-section h3 { color: var(--text); }
+html[data-theme="light"] .legal-note {
+  background: rgba(109, 40, 217, 0.04);
+  border-color: rgba(109, 40, 217, 0.18);
+}
+
+
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
 
@@ -2463,6 +2683,17 @@ tr:last-child td {
   border-color: var(--accent);
 }
 
+.input-error {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.06) !important;
+}
+
+.form-error-msg {
+  font-size: 0.78rem;
+  color: #ef4444;
+  text-align: left;
+  margin-top: -6px;
+}
 
 .success-icon {
   width: 60px;
