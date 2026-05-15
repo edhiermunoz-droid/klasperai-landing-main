@@ -1373,6 +1373,18 @@ tr:last-child td {
     font-size: 0.9rem;
   }
 
+  /* Hero: hide primary CTA (sticky handles it), style secondary as solid */
+  .hero-cta-primary {
+    display: none !important;
+  }
+
+  .hero-cta-secondary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%) !important;
+    border-color: transparent !important;
+    color: #fff !important;
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.35) !important;
+  }
+
   /* Quote */
   .quote-section {
     padding: 80px 20px;

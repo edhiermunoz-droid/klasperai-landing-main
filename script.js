@@ -185,10 +185,13 @@ if (menuBtn && mainNav) {
   const finalSection = document.getElementById("final");
   if (!cta || !hero) return;
 
-  window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY > hero.offsetHeight * 0.55;
+  const isMobile = window.innerWidth <= 768;
+
+  function updateCta() {
     const finalRect = finalSection ? finalSection.getBoundingClientRect() : null;
     const pastFinal = finalRect && finalRect.top < window.innerHeight * 0.85;
+    // On mobile: always visible (from the start); on desktop: after scrolling 55% of hero
+    const scrolled = isMobile || window.scrollY > hero.offsetHeight * 0.55;
 
     if (scrolled && !pastFinal) {
       cta.classList.add("is-active");
@@ -197,7 +200,10 @@ if (menuBtn && mainNav) {
       cta.classList.remove("is-active");
       cta.setAttribute("aria-hidden", "true");
     }
-  }, { passive: true });
+  }
+
+  updateCta();
+  window.addEventListener("scroll", updateCta, { passive: true });
 })();
 
 // Email links are handled natively by mailto:
