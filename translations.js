@@ -19,19 +19,19 @@ const TRANSLATIONS = {
   "footer.terms": { es: "Términos de Uso", en: "Terms of Use" },
   "footer.contact": { es: "Contacto", en: "Contact" },
 
-  "sticky.cta": { es: "Descárgalo gratis", en: "Download free" },
+  "sticky.cta": { es: "Probar Beta Gratis", en: "Try Beta Free" },
 
   // ===== URGENCY BAR =====
-  "urgency.text": { es: "Oferta de lanzamiento: Prueba gratuita disponible por tiempo limitado.", en: "Launch offer: Free trial available for a limited time." },
+  "urgency.text": { es: "Acceso Beta: Prueba cualquier plan gratis por tiempo limitado.", en: "Beta Access: Try any plan for free for a limited time." },
 
   // ===== HERO =====
   "hero.badge": { es: "Ya disponible en la App Store · iOS 17+", en: "Now available on the App Store · iOS 17+" },
   "hero.label": { es: "El método de estudio que los mejores ya usan", en: "The study method top students already use" },
   "hero.h1": { es: 'Deja de estudiar más.<br>Empieza a <em>retener más.</em>', en: 'Stop studying more.<br>Start <em>retaining more.</em>' },
   "hero.desc": { es: "KlasperAI convierte cualquier clase, reunión o PDF en flashcards, quizzes, juegos de vocabulario y un plan de repaso — en menos de 60 segundos.", en: "KlasperAI turns any class, meeting, or PDF into flashcards, quizzes, vocabulary games, and a review plan — in less than 60 seconds." },
-  "hero.cta_download": { es: "Descargar App", en: "Download App" },
+  "hero.cta_download": { es: "Unirse a la Beta", en: "Join Beta" },
   "hero.cta_how": { es: "Ver cómo funciona", en: "See how it works" },
-  "hero.trust": { es: "7 días de prueba gratis. Tu privacidad garantizada.", en: "7-day free trial. Your privacy guaranteed." },
+  "hero.trust": { es: "Acceso Beta gratuito. Tu privacidad garantizada.", en: "Free Beta Access. Your privacy guaranteed." },
 
   // Portal quote
   "hero.quote": { es: '"No aprendemos de la experiencia... aprendemos al reflexionar sobre la experiencia."', en: '"We do not learn from experience... we learn from reflecting on experience."' },
@@ -116,7 +116,7 @@ const TRANSLATIONS = {
   // Compare table
   "compare.title": { es: "Comparativa rápida", en: "Quick comparison" },
   "compare.th_scenario": { es: "Escenario", en: "Scenario" },
-  "compare.th_manual": { es: "Apuntes manuales", en: "Manual notes" },
+  "compare.th_manual": { es: "Manual", en: "Manual" },
   "compare.th_klasper": { es: "KlasperAI", en: "KlasperAI" },
   "compare.row1_scenario": { es: "De clase a resumen", en: "From class to summary" },
   "compare.row1_manual": { es: "Horas y formato inconsistente", en: "Hours and inconsistent format" },
@@ -143,8 +143,8 @@ const TRANSLATIONS = {
   // ===== CTA SECTION =====
   "cta.label": { es: "Empieza ahora", en: "Start now" },
   "cta.title": { es: 'El semestre que viene,<br>¿seguirás estudiando igual?', en: 'Next semester,<br>will you keep studying the same way?' },
-  "cta.desc": { es: 'Descarga KlasperAI hoy y comienza tu <strong>prueba gratuita de 7 días</strong>. Descubre cuánto tiempo puedes ahorrar.', en: 'Download KlasperAI today and start your <strong>7-day free trial</strong>. Discover how much time you can save.' },
-  "cta.download": { es: "Descargar en App Store", en: "Download on App Store" },
+  "cta.desc": { es: 'Únete a la beta hoy y prueba cualquier plan <strong>sin costo</strong>. No se te cobrará nada durante este periodo.', en: 'Join the beta today and try any plan <strong>for free</strong>. You won\'t be charged during this period.' },
+  "cta.download": { es: "Unirse a la Beta en TestFlight", en: "Join Beta on TestFlight" },
 
   "trust.no_cc": { es: "Sin tarjeta de crédito", en: "No credit card required" },
   "trust.cancel": { es: "Cancela cuando quieras", en: "Cancel anytime" },
@@ -169,6 +169,16 @@ const TRANSLATIONS = {
   "blog.3_title": { es: "Study Today: metodología diaria de 30 minutos", en: "Study Today: 30-minute daily methodology" },
   "blog.3_desc": { es: "Cómo mantener consistencia sin depender de motivación variable.", en: "How to maintain consistency without relying on variable motivation." },
   "blog.3_cta": { es: "Recibir por email →", en: "Receive by email →" },
+  
+  // ===== BETA LEAD MODAL =====
+  "modal.title": { es: "Acceso Beta Exclusivo", en: "Exclusive Beta Access" },
+  "modal.desc": { es: "Déjanos tu nombre y correo para recibir noticias y desbloquear tu enlace de descarga para iOS.", en: "Leave your name and email to receive news and unlock your download link for iOS." },
+  "modal.placeholder_name": { es: "Tu nombre", en: "Your name" },
+  "modal.placeholder_email": { es: "tu@email.com", en: "your@email.com" },
+  "modal.cta": { es: "Obtener Acceso Beta", en: "Get Beta Access" },
+  "modal.success_title": { es: "¡Ya casi estás!", en: "You're almost there!" },
+  "modal.success_desc": { es: "Gracias por unirte. Aquí tienes tu enlace directo para TestFlight:", en: "Thanks for joining. Here is your direct link for TestFlight:" },
+  "modal.success_cta": { es: "Abrir en TestFlight", en: "Open in TestFlight" },
 
   // ===== GUIDE PAGE =====
   "guide.label": { es: "Guía Maestra", en: "Master Guide" },

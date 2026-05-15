@@ -139,21 +139,7 @@ if (menuBtn && mainNav) {
   });
 }
 
-// ---------- URGENCY BAR ----------
-(function initUrgencyBar() {
-  const bar = document.getElementById("urgency-bar");
-  const closeBtn = document.getElementById("urgencyClose");
-  if (!bar) return;
 
-  document.body.classList.add("has-urgency-bar");
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      bar.classList.add("hidden");
-      document.body.classList.remove("has-urgency-bar");
-    });
-  }
-})();
 
 // ---------- STICKY MOBILE CTA ----------
 (function initStickyCta() {
@@ -198,3 +184,83 @@ if (menuBtn && mainNav) {
     });
   });
 })();
+// ---------- BETA MODAL LOGIC ----------
+(function initBetaModal() {
+  const modal = document.getElementById("betaModal");
+  const closeBtn = document.getElementById("modalClose");
+  const form = document.getElementById("betaForm");
+  const formStep = document.getElementById("modalStepForm");
+  const successStep = document.getElementById("modalStepSuccess");
+
+  if (!modal) return;
+
+  function openModal() {
+    modal.classList.add("is-active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Trigger from all Beta Buttons
+  let activeTriggerType = 'download'; // 'download' or 'guide'
+
+  const betaButtons = document.querySelectorAll(".trigger-beta-modal");
+  betaButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      activeTriggerType = btn.classList.contains('lead-magnet-btn') ? 'guide' : 'download';
+      openModal();
+    });
+  });
+
+
+
+  // Auto-open for mobile after 12 seconds (if not closed)
+  const isMobile = window.innerWidth <= 768;
+  const hasSeenModal = localStorage.getItem("klasper_beta_modal_seen");
+
+  if (isMobile && !hasSeenModal) {
+    setTimeout(() => {
+      activeTriggerType = 'download';
+      openModal();
+      localStorage.setItem("klasper_beta_modal_seen", "true");
+    }, 12000); 
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Form Submission
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("betaName").value;
+      const email = document.getElementById("betaEmail").value;
+      
+      console.log("Lead captured:", { name, email, type: activeTriggerType });
+      
+      localStorage.setItem("klasper_beta_converted", "true");
+
+      if (activeTriggerType === 'guide') {
+        // Redirect to guide after a short delay
+        formStep.innerHTML = `<h2>Redirigiendo...</h2><p>Gracias ${name}, estamos abriendo tu guía.</p>`;
+        setTimeout(() => {
+          window.location.href = 'guia.html';
+        }, 1500);
+      } else {
+        // Show TestFlight success step
+        formStep.classList.add("hidden");
+        successStep.classList.remove("hidden");
+      }
+    });
+  }
+})();
+
+

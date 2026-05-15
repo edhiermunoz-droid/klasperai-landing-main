@@ -4,9 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KlasperAI — De clase a material de estudio en minutos</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./AppStore_1024.png">
+  <link rel="apple-touch-icon" href="./AppStore_1024.png">
+  
+  <title>KlasperAI — La App de Estudio con IA para Estudiantes</title>
   <meta name="description"
-    content="KlasperAI convierte tus clases en resúmenes, flashcards, quizzes y juegos de vocabulario automáticamente. Estudia menos tiempo, aprende más. Descárgalo gratis en la App Store.">
+    content="KlasperAI: Tu asistente de estudio con IA. Convierte clases en resúmenes, flashcards y quizzes automáticamente. El mejor método para retener más estudiando menos. ¡Prueba la Beta!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -18,8 +23,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://klasper.ai/">
   <meta property="og:title" content="KlasperAI — De clase a material de estudio en minutos">
-  <meta property="og:description" content="KlasperAI convierte tus clases en resúmenes, flashcards, quizzes y juegos de vocabulario automáticamente. Estudia menos tiempo, aprende más. Descárgalo gratis en la App Store.">
-  <meta property="og:image" content="https://klasper.ai/dewey.png">
+  <meta property="og:description" content="KlasperAI convierte tus clases en resúmenes, flashcards y quizzes automáticamente. Estudia de forma inteligente con IA.">
+  <meta property="og:image" content="https://klasper.ai/assets/dewey.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -36,12 +41,14 @@
     "name": "KlasperAI",
     "operatingSystem": "iOS 17+",
     "applicationCategory": "EducationApplication",
+    "genre": "AI Study Assistant",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "KlasperAI convierte tus clases en resúmenes, flashcards, quizzes y juegos de vocabulario automáticamente."
+    "description": "KlasperAI es un asistente de estudio inteligente que convierte clases y documentos en materiales de aprendizaje como resúmenes y flashcards usando IA.",
+    "screenshot": "https://klasper.ai/assets/app_screen_dashboard.png"
   }
   </script>
 </head>
@@ -58,18 +65,8 @@
     </defs>
   </svg>
 
-  <!-- ===== URGENCY BAR ===== -->
-  <div id="urgency-bar" role="alert">
-    <span class="urgency-icon" aria-hidden="true">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-      </svg>
-    </span>
-    <span class="urgency-text" data-i18n="urgency.text">
-      Oferta de lanzamiento: Prueba gratuita disponible por tiempo limitado.
-    </span>
-    <button class="urgency-close" id="urgencyClose" aria-label="Cerrar aviso">×</button>
-  </div>
+
+
 
   <!-- Star canvas -->
   <canvas id="starfield" aria-hidden="true"></canvas>
@@ -114,14 +111,14 @@
             repaso — en menos de 60 segundos.</p>
 
           <div class="hero-actions">
-            <a class="btn-glow" href="#final" style="height: 48px; border-radius: 9px; padding: 0 24px; min-width: auto;" data-i18n="hero.cta_download">
-              Descargar App
+            <a class="btn-glow trigger-beta-modal" href="#" style="height: 48px; border-radius: 9px; padding: 0 24px; min-width: auto;" data-i18n="hero.cta_download">
+              Unirse a la Beta
             </a>
             <a class="btn-outline" href="#producto" style="height: 48px; border-radius: 9px; padding: 0 24px; font-weight: 500;" data-i18n="hero.cta_how">
               Ver cómo funciona
             </a>
           </div>
-          <p class="hero-trust" data-i18n="hero.trust">7 días de prueba gratis. Tu privacidad garantizada.</p>
+          <p class="hero-trust" data-i18n="hero.trust">Acceso Beta gratuito. Tu privacidad garantizada.</p>
         </div>
 
         <!-- Glowing portal arch -->
@@ -290,7 +287,7 @@
           <div class="showcase-item">
             <div class="iphone-mockup">
               <div class="iphone-screen">
-                <img src="./app_screen_dashboard.png" alt="KlasperAI Dashboard">
+                <img src="./app_screen_dashboard.png" alt="Panel principal de KlasperAI con el resumen de misiones y streak diario" loading="lazy" decoding="async">
               </div>
             </div>
             <h3 data-i18n="showcase.1_title">Tu Centro de Mando</h3>
@@ -300,7 +297,7 @@
           <div class="showcase-item">
             <div class="iphone-mockup">
               <div class="iphone-screen">
-                <img src="./app_screen_record.png" alt="KlasperAI Recording">
+                <img src="./app_screen_record.png" alt="Interfaz de grabación de clases con IA en KlasperAI" loading="lazy" decoding="async">
               </div>
             </div>
             <h3 data-i18n="showcase.2_title">Captura Inteligente</h3>
@@ -310,7 +307,7 @@
           <div class="showcase-item">
             <div class="iphone-mockup">
               <div class="iphone-screen">
-                <img src="./app_screen_answer.png" alt="KlasperAI Flashcards">
+                <img src="./app_screen_answer.png" alt="Sesión de repaso activo con flashcards inteligentes en KlasperAI" loading="lazy" decoding="async">
               </div>
             </div>
             <h3 data-i18n="showcase.3_title">Repaso Efectivo</h3>
@@ -333,7 +330,7 @@
             <div class="step-visual">
               <div class="iphone-mockup mini">
                 <div class="iphone-screen">
-                  <img src="./app_screen_record.png" alt="Grabación">
+                  <img src="./app_screen_record.png" alt="Subiendo material de estudio a la nube" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
@@ -346,7 +343,7 @@
             <div class="step-visual">
               <div class="iphone-mockup mini">
                 <div class="iphone-screen">
-                  <img src="./app_screen_question.png" alt="IA Generando">
+                   <img src="./app_screen_question.png" alt="IA analizando y generando contenido educativo" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
@@ -359,7 +356,7 @@
             <div class="step-visual">
               <div class="iphone-mockup mini">
                 <div class="iphone-screen">
-                  <img src="./app_screen_swipe_easy.png" alt="Repaso Activo">
+                  <img src="./app_screen_swipe_easy.png" alt="Usuario marcando un concepto como dominado en KlasperAI" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
@@ -402,7 +399,7 @@
             <thead>
               <tr>
                 <th data-i18n="compare.th_scenario">Escenario</th>
-                <th data-i18n="compare.th_manual">Apuntes manuales</th>
+                <th data-i18n="compare.th_manual">Manual</th>
                 <th data-i18n="compare.th_klasper">KlasperAI</th>
               </tr>
             </thead>
@@ -469,11 +466,11 @@
         <div class="glow-ellipse glow-ellipse-sm" aria-hidden="true"></div>
         <p class="section-label" data-i18n="cta.label">Empieza ahora</p>
         <h2 class="section-title" data-i18n-html="cta.title">El semestre que viene,<br>¿seguirás estudiando igual?</h2>
-        <p class="cta-desc" data-i18n-html="cta.desc">Descarga KlasperAI hoy y comienza tu <strong>prueba gratuita de 7 días</strong>. Descubre cuánto tiempo puedes ahorrar.</p>
+        <p class="cta-desc" data-i18n-html="cta.desc">Únete a la beta hoy y prueba cualquier plan <strong>sin costo</strong>. No se te cobrará nada durante este periodo.</p>
 
         <div class="cta-buttons">
-          <a class="btn-glow" href="#" style="height: 48px; border-radius: 9px; padding: 0 24px; min-width: auto;" data-i18n="cta.download">
-            Descargar en App Store
+          <a class="btn-glow trigger-beta-modal" href="#" style="height: 48px; border-radius: 9px; padding: 0 24px; min-width: auto;" data-i18n="cta.download">
+            Unirse a la Beta en TestFlight
           </a>
         </div>
 
@@ -516,8 +513,8 @@
               <h3 data-i18n="lead.title">Guía: Cómo preparar un examen en 48 horas con recuperación activa</h3>
               <p data-i18n="lead.desc">El método exacto que aplica KlasperAI, explicado paso a paso. Sin app, sin requisitos. Solo el
                 sistema que funciona.</p>
-              <a href="guia.html"
-                class="btn-glow lead-magnet-btn" data-i18n="lead.cta">
+              <a href="#"
+                class="btn-glow lead-magnet-btn trigger-beta-modal" data-i18n="lead.cta">
                 Ver la guía interactiva gratis →
               </a>
             </div>
@@ -587,9 +584,31 @@
 
   <!-- ===== STICKY MOBILE CTA ===== -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="true">
-    <a class="btn-glow sticky-cta-btn" href="#final" data-i18n="sticky.cta">
-      Descárgalo gratis
+    <a class="btn-glow sticky-cta-btn trigger-beta-modal" href="#" data-i18n="sticky.cta">
+      Probar Beta Gratis
     </a>
+  </div>
+  
+  <!-- ===== BETA MODAL ===== -->
+  <div id="betaModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+      <div id="modalStepForm">
+        <h2 data-i18n="modal.title">Acceso Beta Exclusivo</h2>
+        <p data-i18n="modal.desc">Déjanos tu correo para recibir noticias y desbloquear tu enlace de descarga para iOS.</p>
+        <form id="betaForm">
+          <input type="text" id="betaName" required placeholder="Tu nombre" data-i18n-placeholder="modal.placeholder_name">
+          <input type="email" id="betaEmail" required placeholder="tu@email.com" data-i18n-placeholder="modal.placeholder_email">
+          <button type="submit" class="btn-glow" data-i18n="modal.cta">Obtener Acceso Beta</button>
+        </form>
+      </div>
+      <div id="modalStepSuccess" class="hidden">
+        <div class="success-icon">✓</div>
+        <h2 data-i18n="modal.success_title">¡Ya casi estás!</h2>
+        <p data-i18n="modal.success_desc">Gracias por unirte. Aquí tienes tu enlace directo para TestFlight:</p>
+        <a href="https://testflight.apple.com/join/Nd4h3jgn" target="_blank" rel="noopener noreferrer" class="btn-glow" data-i18n="modal.success_cta">Abrir en TestFlight</a>
+      </div>
+    </div>
   </div>
 
   <script src="./translations.js"></script>
