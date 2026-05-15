@@ -163,27 +163,8 @@ if (menuBtn && mainNav) {
   }, { passive: true });
 })();
 
-// ---------- COPY EMAIL FUNCTIONALITY ----------
-(function initCopyEmail() {
-  const emailLinks = document.querySelectorAll('a[href^="mailto:support@klasperai.com"]');
-  
-  emailLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // Allow default mailto action for CTA buttons, but also copy to clipboard
-      navigator.clipboard.writeText('support@klasperai.com').then(() => {
-        // Optional: show a small toast or change text temporarily
-        const originalText = link.textContent;
-        if (!link.classList.contains('btn-outline') && !link.classList.contains('blog-card-cta')) {
-            // Only change text for icon/footer links to avoid layout shift on main buttons
-            link.title = "¡Email copiado al portapapeles!";
-            setTimeout(() => { link.title = ""; }, 2000);
-        }
-      }).catch(err => {
-        console.error('Failed to copy email: ', err);
-      });
-    });
-  });
-})();
+// Email links are handled natively by mailto:
+
 // ---------- BETA MODAL LOGIC ----------
 (function initBetaModal() {
   const modal = document.getElementById("betaModal");
