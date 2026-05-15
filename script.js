@@ -244,18 +244,31 @@ if (menuBtn && mainNav) {
       const name = document.getElementById("betaName").value;
       const email = document.getElementById("betaEmail").value;
       
-      console.log("Lead captured:", { name, email, type: activeTriggerType });
-      
+      const payload = {
+        name: name,
+        email: email,
+        source: activeTriggerType,
+        timestamp: new Date().toISOString(),
+        url: window.location.href
+      };
+
+      // Send to Webhook (n8n)
+      fetch('https://webhookn8n.soursop-ia.com/webhook/e47e0784-97af-414f-9bd5-73145b519710', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors', // Standard for many webhooks to avoid CORS issues
+        body: JSON.stringify(payload)
+      }).catch(err => console.warn("Webhook background sync error:", err));
+
+      console.log("Lead captured:", payload);
       localStorage.setItem("klasper_beta_converted", "true");
 
       if (activeTriggerType === 'guide') {
-        // Redirect to guide after a short delay
         formStep.innerHTML = `<h2>Redirigiendo...</h2><p>Gracias ${name}, estamos abriendo tu guía.</p>`;
         setTimeout(() => {
           window.location.href = 'guia.html';
         }, 1500);
       } else {
-        // Show TestFlight success step
         formStep.classList.add("hidden");
         successStep.classList.remove("hidden");
       }
