@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
+  <title>Bienvenido a KlasperAI Beta</title>
+  <style>
+    /* ── Reset ─────────────────────────────────────────── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── Gmail dark mode overrides (data-ogsc/data-ogsb) ─ */
+    [data-ogsc] .wrapper  { background-color: #0b0d17 !important; }
+    [data-ogsb] .wrapper  { background-color: #0b0d17 !important; }
+    [data-ogsc] .card     { background-color: #12141a !important; }
+    [data-ogsc] .cta-card { background-color: #12101e !important; }
+    [data-ogsc] .text-main  { color: #ffffff !important; }
+    [data-ogsc] .text-dim   { color: #b0b0c0 !important; }
+    [data-ogsc] .text-faint { color: #8a8a9e !important; }
+    [data-ogsc] .text-accent { color: #c084fc !important; }
+
+    /* ── Apple Mail / Samsung / Yahoo dark mode ─────────── */
+    /* "u + #body" targets Apple Mail exclusively */
+    u + #body .wrapper  { background-color: #0b0d17 !important; }
+    u + #body .card     { background-color: #12141a !important; }
+    u + #body .text-main  { color: #ffffff !important; }
+
+    /* Explicit dark mode re-assertion (Apple Mail, Outlook.com) */
+    @media (prefers-color-scheme: dark) {
+      body, .wrapper { background-color: #0b0d17 !important; color: #ffffff !important; }
+      .card     { background-color: #12141a !important; border-color: #1f212b !important; }
+      .quote-card { background-color: #0f1115 !important; }
+      .cta-card { background-color: #12101e !important; border-color: #271e48 !important; }
+      .text-main   { color: #ffffff !important; }
+      .text-dim    { color: #b0b0c0 !important; }
+      .text-faint  { color: #8a8a9e !important; }
+      .text-accent { color: #c084fc !important; }
+      .footer-div  { border-top-color: #1f212b !important; }
+      .badge-beta  { color: #c084fc !important; background-color: #18152d !important; border-color: #3a3c52 !important; }
+      .step-border { border-bottom-color: #1f212b !important; }
+      .logo-name   { color: #ffffff !important; }
+    }
+
+    /* ── Light mode overrides ────────────────────────────── */
+    @media (prefers-color-scheme: light) {
+      body, .wrapper  { background-color: #f5f3ff !important; color: #0f0c1e !important; }
+      .card     { background-color: #ffffff !important; border-color: rgba(139,92,246,0.1) !important; }
+      .quote-card { background-color: #ffffff !important; border-top-color: rgba(139,92,246,0.1) !important; border-right-color: rgba(139,92,246,0.1) !important; border-bottom-color: rgba(139,92,246,0.1) !important; }
+      .cta-card { background-color: #ede9ff !important; border-color: rgba(139,92,246,0.2) !important; }
+      .cta-glow  { display: none !important; }
+      .text-main   { color: #0f0c1e !important; }
+      .text-dim    { color: rgba(15,12,30,0.68) !important; }
+      .text-faint  { color: rgba(15,12,30,0.48) !important; }
+      .text-accent { color: #7c3aed !important; }
+      .badge-beta  { color: #7c3aed !important; background-color: rgba(139,92,246,0.07) !important; border-color: rgba(139,92,246,0.25) !important; }
+      .footer-div  { border-top-color: rgba(15,12,30,0.08) !important; }
+      .footer-link { color: rgba(15,12,30,0.28) !important; }
+      .footer-copy { color: rgba(15,12,30,0.18) !important; }
+      .footer-sig  { color: rgba(15,12,30,0.38) !important; }
+      .footer-sig-strong { color: rgba(15,12,30,0.6) !important; }
+      .step-border { border-bottom-color: rgba(15,12,30,0.06) !important; }
+      .logo-name   { color: #0f0c1e !important; }
+      .quote-text  { color: rgba(15,12,30,0.68) !important; }
+      .quote-author-label { color: rgba(15,12,30,0.35) !important; }
+      .greeting-sep { border-top-color: rgba(15,12,30,0.06) !important; }
+      .inline-chip { background-color: rgba(139,92,246,0.07) !important; border-color: rgba(139,92,246,0.18) !important; }
+    }
+
+    /* ── Mobile ─────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .card-pad  { padding-left: 22px !important; padding-right: 22px !important; }
+      .cta-headline-text { font-size: 26px !important; }
+    }
+  </style>
+</head>
+<body id="body" style="margin:0;padding:0;background-color:#0b0d17;font-family:'Inter',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:#ffffff;-webkit-font-smoothing:antialiased;line-height:1.6;">
+
+  <table class="wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#0b0d17;width:100%;padding:36px 16px 52px;">
+    <tr>
+      <td align="center">
+        <table class="container" width="600" cellpadding="0" cellspacing="0" border="0" role="presentation" style="max-width:600px;width:100%;">
+
+          <!-- ══ TOPBAR ══════════════════════════════════════ -->
+          <tr>
+            <td style="padding-bottom:28px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                <tr>
+                  <td valign="middle">
+                    <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                      <tr>
+                        <td valign="middle">
+                          <img src="https://klasperai.com/AppStore_1024.png" width="30" height="30" alt="KlasperAI"
+                               style="border-radius:7px;display:block;" />
+                        </td>
+                        <td valign="middle" style="padding-left:10px;">
+                          <span class="logo-name" style="font-family:'Inter',-apple-system,Arial,sans-serif;font-size:16px;font-weight:600;color:#ffffff;letter-spacing:-0.2px;">KlasperAI</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="middle" align="right">
+                    <span class="badge-beta" style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#c084fc;background-color:#18152d;border:1px solid #3a3c52;padding:4px 11px;border-radius:20px;white-space:nowrap;">Acceso Beta</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ══ QUOTE CARD ══════════════════════════════════ -->
+          <tr>
+            <td style="padding-bottom:10px;">
+              <table class="quote-card" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                     style="background-color:#0f1115;border-left:2px solid #8b5cf6;border-top:1px solid #1c1e27;border-right:1px solid #1c1e27;border-bottom:1px solid #1c1e27;border-radius:0 14px 14px 0;padding:22px 28px;">
+                <tr>
+                  <td width="68" valign="middle" style="padding-right:20px;">
+                    <img src="https://klasperai.com/dewey.png" width="56" height="70" alt="John Dewey"
+                         style="border-radius:30px 30px 0 0;object-fit:cover;object-position:top center;opacity:0.82;border:1px solid #2c2e42;display:block;" />
+                  </td>
+                  <td valign="middle">
+                    <p class="quote-text" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;font-style:italic;color:#b7b7c4;line-height:1.6;margin-bottom:10px;">
+                      "No aprendemos de la experiencia... aprendemos al reflexionar sobre la experiencia."
+                    </p>
+                    <p class="quote-author-label" style="font-size:11px;color:#54565d;">
+                      <strong style="color:#8b5cf6;font-weight:500;">John Dewey</strong>&nbsp;·&nbsp;Filósofo y pedagogo · 1859 – 1952
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ══ GREETING CARD ═══════════════════════════════ -->
+          <tr>
+            <td style="padding-bottom:10px;">
+              <table class="card card-pad" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                     style="background-color:#12141a;border:1px solid #1f212b;border-radius:18px;padding:32px 40px;">
+                <tr>
+                  <td>
+                    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#8b5cf6;margin-bottom:20px;">Bienvenido</p>
+                    <p class="text-main" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;font-weight:600;color:#ffffff;margin-bottom:14px;line-height:1.3;">
+                      Hola, <em style="color:#c084fc;font-style:italic;">{{ $json.name }}</em>
+                    </p>
+                    <p class="text-dim" style="font-size:14px;color:#b0b0c0;line-height:1.75;margin-bottom:11px;">
+                      Gracias por unirte a la beta. Eres parte del grupo que va a ayudarnos a construir la herramienta de estudio más inteligente para estudiantes hispanohablantes. Tu feedback en esta etapa vale más que cualquier dato de analítica.
+                    </p>
+                    <p class="text-dim" style="font-size:14px;color:#b0b0c0;line-height:1.75;margin-bottom:11px;">
+                      Tu acceso está activo con créditos gratuitos para probar todo. Las compras son en modo Sandbox — <strong style="color:#d4d4de;font-weight:500;">no se te cobrará nada</strong>. A lo largo de la beta te iré escribiendo directamente aquí con novedades.
+                    </p>
+                    <p class="text-dim greeting-sep" style="font-size:14px;color:#b0b0c0;line-height:1.75;margin-top:18px;padding-top:18px;border-top:1px solid #1f212b;">
+                      Antes de que entres, una pregunta: <strong style="color:#d4d4de;font-weight:500;">¿cuál es el mayor problema que tienes cuando estudias?</strong> Responde este correo — leo cada mensaje personalmente.
+                    </p>
+                    <p style="margin-top:14px;">
+                      <span class="inline-chip" style="display:inline-block;background-color:#18152d;border:1px solid #2c2e42;color:#c084fc;font-size:11px;font-weight:500;padding:4px 11px;border-radius:20px;">
+                        <span style="display:inline-block;width:5px;height:5px;background:#22c55e;border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Ya disponible en App Store · iOS 17+
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ══ STEPS CARD ══════════════════════════════════ -->
+          <tr>
+            <td style="padding-bottom:10px;">
+              <table class="card card-pad" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                     style="background-color:#12141a;border:1px solid #1f212b;border-radius:18px;padding:32px 40px;">
+                <tr>
+                  <td>
+                    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#8b5cf6;margin-bottom:20px;">Tu primera sesión</p>
+
+                    <!-- Step 1 -->
+                    <table class="step-border" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #1f212b;margin-bottom:20px;padding-bottom:20px;">
+                      <tr>
+                        <td width="44" valign="top" style="padding-right:14px;">
+                          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:700;font-style:italic;color:#8b5cf6;opacity:0.7;line-height:1;display:block;">1</span>
+                        </td>
+                        <td valign="top">
+                          <p class="text-main" style="font-size:14px;font-weight:600;color:#ffffff;margin-bottom:3px;">Abre KlasperAI en TestFlight</p>
+                          <p class="text-faint" style="font-size:13px;color:#8a8a9e;line-height:1.55;">Requiere iPhone o iPad con iOS 17+. Si no tienes TestFlight, App Store lo descarga automáticamente.</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Step 2 -->
+                    <table class="step-border" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-bottom:1px solid #1f212b;margin-bottom:20px;padding-bottom:20px;">
+                      <tr>
+                        <td width="44" valign="top" style="padding-right:14px;">
+                          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:700;font-style:italic;color:#8b5cf6;opacity:0.7;line-height:1;display:block;">2</span>
+                        </td>
+                        <td valign="top">
+                          <p class="text-main" style="font-size:14px;font-weight:600;color:#ffffff;margin-bottom:3px;">Sube tu clase más reciente</p>
+                          <p class="text-faint" style="font-size:13px;color:#8a8a9e;line-height:1.55;">Audio, grabación de reunión o PDF. Sin reformatear nada — en menos de 60 segundos tienes resumen, flashcards y plan de repaso.</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Step 3 -->
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                      <tr>
+                        <td width="44" valign="top" style="padding-right:14px;">
+                          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:700;font-style:italic;color:#8b5cf6;opacity:0.7;line-height:1;display:block;">3</span>
+                        </td>
+                        <td valign="top">
+                          <p class="text-main" style="font-size:14px;font-weight:600;color:#ffffff;margin-bottom:3px;">Abre Study Today al día siguiente</p>
+                          <p class="text-faint" style="font-size:13px;color:#8a8a9e;line-height:1.55;">Te dice exactamente qué repasar. Ese momento — cuando ves que no olvidaste nada — es el que queremos que sientas.</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ══ CTA CARD ════════════════════════════════════ -->
+          <tr>
+            <td style="padding-bottom:10px;">
+              <table class="cta-card card-pad" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                     style="background-color:#12101e;border:1px solid #271e48;border-radius:18px;padding:44px 40px 38px;text-align:center;">
+                <tr>
+                  <td align="center">
+                    <!-- Glow decoration (hidden in light mode via class) -->
+                    <div class="cta-glow" style="height:0;overflow:hidden;">
+                      <!--[if !mso]><!-->
+                      <div style="height:80px;margin-bottom:-80px;background:radial-gradient(ellipse at 50% 100%, rgba(139,92,246,0.18) 0%, transparent 70%);pointer-events:none;"></div>
+                      <!--<![endif]-->
+                    </div>
+                    <p class="cta-headline-text text-main" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#ffffff;letter-spacing:-0.4px;line-height:1.15;margin-bottom:9px;">
+                      Tu primera clase<br/><em style="font-style:italic;color:#c084fc;">te espera.</em>
+                    </p>
+                    <p class="text-faint" style="font-size:14px;color:#8a8a9e;margin-bottom:28px;line-height:1.5;">
+                      Sube audio, graba en vivo o importa un PDF.<br/>60 segundos después tienes todo listo para estudiar.
+                    </p>
+                    <!-- Botón CTA — table-based para Outlook -->
+                    <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin:0 auto;">
+                      <tr>
+                        <td align="center" bgcolor="#7c3aed" style="border-radius:100px;background-color:#7c3aed;">
+                          <a href="https://testflight.apple.com/join/Nd4h3jgn"
+                             style="display:inline-block;background-color:#7c3aed;color:#ffffff;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:0.04em;padding:14px 44px;border-radius:100px;font-family:'Inter',-apple-system,Arial,sans-serif;">
+                            Abrir en TestFlight →
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                    <p style="margin-top:16px;font-size:11px;color:#44455a;line-height:1.6;">
+                      Sin tarjeta de crédito&nbsp;·&nbsp;iPhone &amp; iPad · iOS 17+
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ══ FOOTER ══════════════════════════════════════ -->
+          <tr>
+            <td>
+              <table class="footer-div" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                     style="border-top:1px solid #1f212b;padding-top:24px;">
+                <tr>
+                  <td>
+                    <p class="footer-sig" style="font-size:13px;color:#717186;line-height:1.8;margin-bottom:14px;">
+                      Con ganas de que lo pruebes,<br/>
+                      <strong class="footer-sig-strong" style="color:#9f9fae;font-weight:500;">Cristian Muñoz</strong><br/>
+                      Fundador · KlasperAI
+                    </p>
+                    <p style="font-size:12px;margin-bottom:8px;">
+                      <a href="https://klasperai.com" class="footer-link" style="color:#44455a;text-decoration:none;margin-right:14px;">klasperai.com</a>
+                      <a href="mailto:support@klasperai.com" class="footer-link" style="color:#44455a;text-decoration:none;margin-right:14px;">Soporte</a>
+                      <a href="https://klasperai.com/privacy.html" class="footer-link" style="color:#44455a;text-decoration:none;margin-right:14px;">Privacidad</a>
+                      <a href="https://klasperai.com/terms.html" class="footer-link" style="color:#44455a;text-decoration:none;">Términos</a>
+                    </p>
+                    <p class="footer-copy" style="font-size:11px;color:#292938;">© KlasperAI · Tu asistente de estudio inteligente para iOS</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
