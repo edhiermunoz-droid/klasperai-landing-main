@@ -352,6 +352,20 @@ if (menuBtn && mainNav) {
       } else {
         formStep.classList.add("hidden");
         successStep.classList.remove("hidden");
+
+        // Show TestFlight link only on iOS; otherwise show Android notice
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const btnTestflight = document.getElementById("btn-testflight");
+        const androidWarning = document.getElementById("android-warning");
+        if (btnTestflight && androidWarning) {
+          if (isIOS) {
+            btnTestflight.style.display = "flex";
+            androidWarning.classList.add("hidden");
+          } else {
+            btnTestflight.style.display = "none";
+            androidWarning.classList.remove("hidden");
+          }
+        }
       }
     });
   }

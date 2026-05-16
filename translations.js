@@ -179,6 +179,8 @@ const TRANSLATIONS = {
   "modal.success_title": { es: "¡Ya casi estás!", en: "You're almost there!" },
   "modal.success_desc": { es: "Gracias por unirte. Aquí tienes tu enlace directo para TestFlight:", en: "Thanks for joining. Here is your direct link for TestFlight:" },
   "modal.success_cta": { es: "Abrir en TestFlight", en: "Open in TestFlight" },
+  "modal.android_title": { es: "📱 Próximamente en Android", en: "📱 Coming soon on Android" },
+  "modal.android_desc": { es: "KlasperAI es actualmente exclusivo para iOS. Te avisaremos cuando llegue a Android.", en: "KlasperAI is currently iOS-only. We'll notify you when it arrives on Android." },
 
   // ===== GUIDE PAGE =====
   "guide.label": { es: "Guía Maestra", en: "Master Guide" },
